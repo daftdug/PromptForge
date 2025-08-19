@@ -114,16 +114,8 @@
 
 @layer utilities {
   .bg-hero-gradient {
-    background: linear-gradient(135deg, 
-      hsl(328, 75%, 20%) 0%, 
-      hsl(340, 80%, 25%) 20%, 
-      hsl(120, 50%, 25%) 35%, 
-      hsl(60, 80%, 35%) 50%, 
-      hsl(120, 50%, 25%) 65%, 
-      hsl(262, 70%, 25%) 80%, 
-      hsl(328, 75%, 20%) 100%
-    );
-    background-size: 400% 400%;
+    background: linear-gradient(135deg, hsl(328, 95%, 25%) 0%, hsl(340, 100%, 30%) 50%, hsl(262, 90%, 30%) 100%);
+    background-size: 300% 300%;
     animation: gradientShift 15s ease-in-out infinite;
   }
   
@@ -131,14 +123,8 @@
     0% {
       background-position: 0% 0%;
     }
-    25% {
-      background-position: 50% 25%;
-    }
     50% {
       background-position: 100% 100%;
-    }
-    75% {
-      background-position: 25% 75%;
     }
     100% {
       background-position: 0% 0%;
