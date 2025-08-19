@@ -93,18 +93,23 @@ export default function HeroSection() {
               </div>
               
               {/* Dynamic overlay for visual interest */}
-              <div className="absolute inset-0 bg-gradient-to-br from-prompt-purple/20 via-prompt-cyan/15 to-prompt-pink/25 pointer-events-none"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-prompt-purple/35 via-prompt-cyan/25 to-prompt-pink/40 pointer-events-none"></div>
               
-              {/* Demo button overlay */}
+              {/* Demo content overlay */}
               <div className="absolute top-6 left-6">
-                <Button
-                  onClick={handleStartFree}
-                  className="bg-prompt-purple/90 backdrop-blur-sm hover:bg-prompt-purple text-white px-4 py-2 rounded-lg font-medium text-sm transition-all duration-300"
-                  data-testid="demo-overlay-button"
-                >
-                  <Play className="mr-2 h-4 w-4" />
-                  Try Demo
-                </Button>
+                <div className="text-center">
+                  <p className="text-white font-semibold text-sm mb-3 drop-shadow-lg">
+                    See Prompt Magic in Action
+                  </p>
+                  <Button
+                    onClick={handleStartFree}
+                    className="bg-cta-gradient hover:shadow-lg hover:shadow-prompt-purple/30 text-white px-5 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300 transform hover:scale-105"
+                    data-testid="demo-overlay-button"
+                  >
+                    <Play className="mr-2 h-4 w-4" />
+                    Try Demo Now
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
