@@ -23,7 +23,7 @@ Enhanced the landing page with professional visual assets and interactive elemen
 ✓ Restored demo button overlay on hero video with centered "Watch Demo" button and Play icon
 ✓ Increased video container height for better visual presence (h-80 mobile, h-96 desktop)
 ✓ Enhanced hero gradient with vibrant blue tones for more dynamic visual appeal
-✓ Updated hero gradient to colorful 3-color diagonal: purple → cyan → pink (upper left to lower right)
+✓ Updated hero gradient to darker, stronger 3-color diagonal: deep purple → dark cyan → deep pink (upper left to lower right)
 
 # User Preferences
 
