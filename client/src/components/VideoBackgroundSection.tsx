@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Play } from "lucide-react";
-import educationalVideo from "@assets/4146195-uhd_3840_2160_25fps_1755619470462.mp4";
+import educationalVideo from "@assets/5125949-uhd_4096_2160_30fps_1755625417781.mp4";
 
 export default function VideoBackgroundSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -37,8 +37,8 @@ export default function VideoBackgroundSection() {
           }}
         >
           <source src={educationalVideo} type="video/mp4" />
+          <source src="/attached_assets/4146195-uhd_3840_2160_25fps_1755619470462.mp4" type="video/mp4" />
           <source src="/attached_assets/4426378-uhd_3840_2160_25fps_1755619470465.mp4" type="video/mp4" />
-          <source src="/attached_assets/4828604-uhd_4096_2160_25fps (1)_1755619470466.mp4" type="video/mp4" />
         </video>
         {/* Gradient overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-br from-prompt-purple/60 via-prompt-dark/70 to-prompt-cyan/60"></div>
