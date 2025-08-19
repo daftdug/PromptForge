@@ -42,7 +42,7 @@ export default function HeroSection() {
               <span className="text-white font-semibold">ChatGPT</span>,{" "}
               <span className="text-white font-semibold">Claude</span>,{" "}
               <span className="text-white font-semibold">Gemini</span>, and beyond.{" "}
-              <span className="text-prompt-purple font-semibold">No login required.</span>
+              <span className="text-gray-400 font-medium">No login required.</span>
             </p>
             
             {/* CTA Button */}
