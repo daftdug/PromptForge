@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, User, Sparkles } from "lucide-react";
+import { Menu, X, User } from "lucide-react";
 import { Link } from "wouter";
+import logoImage from "@assets/image_1755624842072.png";
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -19,9 +20,12 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 cursor-pointer" data-testid="logo">
-            <div className="w-8 h-8 bg-gradient-to-br from-purple-600 via-cyan-500 to-pink-600 rounded-lg flex items-center justify-center shadow-lg shadow-purple-500/30">
-              <Sparkles className="text-white h-4 w-4" />
-            </div>
+            <img 
+              src={logoImage} 
+              alt="Prompt Magic Logo" 
+              className="w-8 h-8"
+              style={{ filter: 'brightness(0) saturate(100%) invert(85%) sepia(100%) saturate(300%) hue-rotate(10deg) brightness(1.1)' }}
+            />
             <span className="text-xl font-bold">Prompt Magic</span>
           </Link>
           
