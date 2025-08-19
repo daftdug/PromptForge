@@ -1,5 +1,6 @@
 import { Sparkles } from "lucide-react";
 import { FaYoutube, FaLinkedin, FaReddit } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 export default function Footer() {
   const footerSections = [
@@ -36,9 +37,9 @@ export default function Footer() {
   ];
 
   const socialLinks = [
-    { icon: FaYoutube, href: "#youtube", color: "prompt-purple", label: "YouTube" },
-    { icon: FaLinkedin, href: "#linkedin", color: "prompt-cyan", label: "LinkedIn" },
-    { icon: FaReddit, href: "#reddit", color: "prompt-pink", label: "Reddit" },
+    { icon: FaYoutube, href: "https://www.youtube.com/@PromptingMagic", color: "prompt-purple", label: "YouTube" },
+    { icon: FaXTwitter, href: "https://x.com/promptingmagic", color: "prompt-cyan", label: "X" },
+    { icon: FaReddit, href: "https://www.reddit.com/r/promptingmagic/", color: "prompt-pink", label: "Reddit" },
   ];
 
   return (
@@ -63,7 +64,9 @@ export default function Footer() {
                 return (
                   <a 
                     key={social.label}
-                    href={social.href} 
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={`w-10 h-10 bg-${social.color}/20 rounded-lg flex items-center justify-center text-${social.color} hover:bg-${social.color} hover:text-white transition-all duration-300`}
                     data-testid={`social-link-${social.label.toLowerCase()}`}
                   >
