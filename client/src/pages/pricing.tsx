@@ -210,63 +210,61 @@ export default function Pricing() {
           </div>
 
           {/* Features Comparison */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-12">
+          <div className="mb-16 max-w-5xl mx-auto">
+            <h2 className="text-5xl lg:text-6xl font-bold text-center mb-12">
               <span className="bg-gradient-to-r from-prompt-purple to-prompt-cyan bg-clip-text text-transparent">
                 Everything You Need
               </span>
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-card-gradient rounded-2xl p-8 border border-prompt-purple/20 text-center">
-                <Zap className="text-prompt-purple h-16 w-16 mx-auto mb-6" />
-                <h3 className="text-2xl font-bold mb-4">Lightning Fast</h3>
-                <p className="text-gray-300 text-lg leading-relaxed">Get instant access to thousands of optimized prompts with one-click copying and editing.</p>
+              <div className="bg-card-gradient rounded-2xl p-10 border border-prompt-purple/20 text-center">
+                <Zap className="text-prompt-purple h-20 w-20 mx-auto mb-8" />
+                <h3 className="text-3xl lg:text-4xl font-bold mb-6">Lightning Fast</h3>
+                <p className="text-gray-300 text-xl leading-relaxed">Get instant access to thousands of optimized prompts with one-click copying and editing.</p>
               </div>
-              <div className="bg-card-gradient rounded-2xl p-8 border border-prompt-cyan/20 text-center">
-                <Crown className="text-prompt-cyan h-16 w-16 mx-auto mb-6" />
-                <h3 className="text-2xl font-bold mb-4">Premium Quality</h3>
-                <p className="text-gray-300 text-lg leading-relaxed">All prompts are tested, optimized, and rated by our community of AI experts and practitioners.</p>
+              <div className="bg-card-gradient rounded-2xl p-10 border border-prompt-cyan/20 text-center">
+                <Crown className="text-prompt-cyan h-20 w-20 mx-auto mb-8" />
+                <h3 className="text-3xl lg:text-4xl font-bold mb-6">Premium Quality</h3>
+                <p className="text-gray-300 text-xl leading-relaxed">All prompts are tested, optimized, and rated by our community of AI experts and practitioners.</p>
               </div>
-              <div className="bg-card-gradient rounded-2xl p-8 border border-prompt-pink/20 text-center">
-                <Sparkles className="text-prompt-pink h-16 w-16 mx-auto mb-6" />
-                <h3 className="text-2xl font-bold mb-4">Always Updated</h3>
-                <p className="text-gray-300 text-lg leading-relaxed">New prompts added daily, with updates for the latest AI models and best practices.</p>
+              <div className="bg-card-gradient rounded-2xl p-10 border border-prompt-pink/20 text-center">
+                <Sparkles className="text-prompt-pink h-20 w-20 mx-auto mb-8" />
+                <h3 className="text-3xl lg:text-4xl font-bold mb-6">Always Updated</h3>
+                <p className="text-gray-300 text-xl leading-relaxed">New prompts added daily, with updates for the latest AI models and best practices.</p>
               </div>
             </div>
           </div>
 
           {/* FAQ */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-12">
+          <div className="mb-16 max-w-5xl mx-auto">
+            <h2 className="text-5xl lg:text-6xl font-bold text-center mb-12">
               <span className="bg-gradient-to-r from-prompt-orange to-prompt-pink bg-clip-text text-transparent">
                 Frequently Asked Questions
               </span>
             </h2>
-            <div className="max-w-5xl mx-auto">
-              <div className="grid md:grid-cols-2 gap-8">
-                {faqs.map((faq, index) => (
-                  <div
-                    key={index}
-                    className="bg-card-gradient rounded-xl p-6 border border-prompt-purple/20"
-                    data-testid={`faq-${index}`}
-                  >
-                    <h3 className="font-bold text-xl mb-4 text-prompt-cyan">{faq.question}</h3>
-                    <p className="text-gray-300 leading-relaxed text-lg">{faq.answer}</p>
-                  </div>
-                ))}
-              </div>
+            <div className="grid md:grid-cols-2 gap-8">
+              {faqs.map((faq, index) => (
+                <div
+                  key={index}
+                  className="bg-card-gradient rounded-xl p-8 border border-prompt-purple/20"
+                  data-testid={`faq-${index}`}
+                >
+                  <h3 className="font-bold text-2xl lg:text-3xl mb-6 text-prompt-cyan">{faq.question}</h3>
+                  <p className="text-gray-300 leading-relaxed text-xl">{faq.answer}</p>
+                </div>
+              ))}
             </div>
           </div>
 
           {/* Final CTA */}
-          <div className="text-center">
+          <div className="text-center max-w-5xl mx-auto">
             <div className="bg-gradient-to-br from-prompt-purple/10 to-prompt-cyan/10 rounded-3xl p-12 border border-prompt-purple/20">
-              <h2 className="text-4xl font-bold mb-6">Ready to Get Started?</h2>
-              <p className="text-2xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
+              <h2 className="text-5xl lg:text-6xl font-bold mb-8">Ready to Get Started?</h2>
+              <p className="text-2xl lg:text-3xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
                 Join thousands of professionals already using Prompt Magic to supercharge their AI workflows.
               </p>
               <Button
-                className="bg-gradient-to-r from-prompt-purple to-prompt-cyan hover:shadow-lg hover:shadow-prompt-purple/25 text-white px-8 py-4 rounded-xl font-semibold text-lg"
+                className="bg-gradient-to-r from-prompt-purple to-prompt-cyan hover:shadow-lg hover:shadow-prompt-purple/25 text-white px-12 py-6 rounded-xl font-semibold text-2xl"
                 onClick={() => window.open('https://promptmagic.dev', '_blank')}
                 data-testid="final-cta-button"
               >

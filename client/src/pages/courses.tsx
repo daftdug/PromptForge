@@ -299,7 +299,7 @@ export default function Courses() {
                   className="bg-card-gradient rounded-xl overflow-hidden border border-prompt-purple/20 hover:border-prompt-cyan/40 transition-all duration-300 hover:transform hover:scale-[1.02]"
                   data-testid={`course-${course.id}`}
                 >
-                  <div className="relative h-40 bg-gradient-to-br from-prompt-purple/20 to-prompt-cyan/20 overflow-hidden">
+                  <div className="relative h-48 bg-gradient-to-br from-prompt-purple/20 to-prompt-cyan/20 overflow-hidden">
                     <video
                       muted
                       loop
@@ -311,53 +311,55 @@ export default function Courses() {
                     </video>
                     <div className="absolute inset-0 bg-gradient-to-br from-prompt-purple/40 to-prompt-cyan/40"></div>
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <Play className="text-white h-12 w-12 opacity-90 drop-shadow-lg" />
+                      <Play className="text-white h-16 w-16 opacity-90 drop-shadow-lg" />
                     </div>
-                    <div className="absolute top-3 left-3 bg-prompt-orange text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    <div className="absolute top-4 left-4 bg-prompt-orange text-white px-4 py-2 rounded-full text-base font-semibold">
                       {course.level}
                     </div>
                     
-                    {/* Compact Media Format Indicators */}
-                    <div className="absolute bottom-2 right-2 flex space-x-1">
-                      <div className="bg-black/70 backdrop-blur-sm rounded-md p-1">
-                        <Play className="text-white h-3 w-3" />
+                    {/* Media Format Indicators */}
+                    <div className="absolute bottom-4 right-4 flex space-x-2">
+                      <div className="bg-black/60 backdrop-blur-sm rounded-lg px-3 py-2 flex items-center">
+                        <Play className="text-white h-4 w-4 mr-1" />
+                        <span className="text-white text-sm font-medium">Video</span>
                       </div>
-                      <div className="bg-black/70 backdrop-blur-sm rounded-md p-1">
-                        <Volume2 className="text-white h-3 w-3" />
+                      <div className="bg-black/60 backdrop-blur-sm rounded-lg px-3 py-2 flex items-center">
+                        <Volume2 className="text-white h-4 w-4 mr-1" />
+                        <span className="text-white text-sm font-medium">Audio</span>
                       </div>
-                      <div className="bg-black/70 backdrop-blur-sm rounded-md p-1">
-                        <FileText className="text-white h-3 w-3" />
+                      <div className="bg-black/60 backdrop-blur-sm rounded-lg px-3 py-2 flex items-center">
+                        <FileText className="text-white h-4 w-4 mr-1" />
+                        <span className="text-white text-sm font-medium">Text</span>
                       </div>
                     </div>
                   </div>
 
-                  <div className="p-4">
-                    <div className="flex items-center justify-between mb-2">
+                  <div className="p-6">
+                    <div className="flex items-center justify-between mb-4">
                       <div className="flex items-center">
-                        <Star className="text-yellow-400 h-3 w-3 fill-current" />
-                        <span className="text-xs text-gray-300 ml-1">{course.rating}</span>
+                        <Star className="text-yellow-400 h-5 w-5 fill-current" />
+                        <span className="text-lg text-gray-300 ml-2">{course.rating}</span>
                       </div>
-                      <div className="flex items-center text-gray-400 text-xs">
-                        <Clock className="h-3 w-3 mr-1" />
+                      <div className="flex items-center text-gray-400 text-lg">
+                        <Clock className="h-5 w-5 mr-2" />
                         <span>{course.duration}</span>
                       </div>
                     </div>
 
-                    <h3 className="font-bold mb-2 text-white text-sm leading-tight">{course.title}</h3>
-                    <p className="text-gray-400 text-xs mb-1">by {course.instructor}</p>
+                    <h3 className="font-bold mb-4 text-white text-2xl leading-tight">{course.title}</h3>
+                    <p className="text-gray-400 text-lg mb-4">by {course.instructor}</p>
 
-                    <div className="flex items-center justify-between mt-3">
-                      <div className="flex items-center space-x-1">
-                        <span className="text-lg font-bold text-prompt-cyan">{course.price}</span>
-                        <span className="text-gray-500 line-through text-sm">{course.originalPrice}</span>
+                    <div className="flex items-center justify-between mt-6">
+                      <div className="flex items-center space-x-3">
+                        <span className="text-3xl font-bold text-prompt-cyan">{course.price}</span>
+                        <span className="text-gray-500 line-through text-xl">{course.originalPrice}</span>
                       </div>
                       <Button
-                        size="sm"
-                        className="bg-prompt-purple/20 border border-prompt-purple/40 text-prompt-purple hover:bg-prompt-purple hover:text-white text-xs px-3 py-1"
+                        className="bg-prompt-purple/20 border border-prompt-purple/40 text-prompt-purple hover:bg-prompt-purple hover:text-white text-lg px-6 py-3 rounded-lg font-semibold"
                         onClick={() => window.open('https://promptmagic.dev', '_blank')}
                         data-testid={`view-course-${course.id}`}
                       >
-                        View
+                        View Course
                       </Button>
                     </div>
                   </div>

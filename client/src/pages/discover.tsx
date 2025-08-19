@@ -227,7 +227,7 @@ export default function Prompts() {
           {/* Load More */}
           <div className="text-center">
             <Button
-              className="bg-gradient-to-r from-prompt-purple to-prompt-cyan hover:shadow-lg hover:shadow-prompt-purple/25 text-white px-8 py-3 rounded-xl font-semibold"
+              className="bg-gradient-to-r from-prompt-purple to-prompt-cyan hover:shadow-lg hover:shadow-prompt-purple/25 text-white px-12 py-6 rounded-xl font-semibold text-2xl"
               onClick={() => window.open('https://promptmagic.dev', '_blank')}
               data-testid="load-more-button"
             >
