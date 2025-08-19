@@ -1,15 +1,17 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Rocket, Play, Brain } from "lucide-react";
-import heroImage from "@assets/pexels-tima-miroshnichenko-6322806_1755619490415.jpg";
+import VideoModal from "@/components/VideoModal";
 
 export default function HeroSection() {
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+
   const handleStartFree = () => {
     window.open('https://promptmagic.dev', '_blank');
   };
 
   const handleDemoVideo = () => {
-    // Placeholder for demo video modal
-    console.log('Demo video requested');
+    setIsVideoModalOpen(true);
   };
 
   return (
@@ -89,6 +91,12 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
+      
+      {/* Video Modal */}
+      <VideoModal 
+        isOpen={isVideoModalOpen} 
+        onClose={() => setIsVideoModalOpen(false)} 
+      />
     </section>
   );
 }
