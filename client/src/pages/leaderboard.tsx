@@ -81,7 +81,7 @@ export default function Leaderboard() {
   ];
 
   return (
-    <div className="min-h-screen bg-prompt-dark text-white font-sans overflow-x-hidden" data-testid="leaderboard-page">
+    <div className="min-h-screen bg-prompt-dark text-white overflow-x-hidden" data-testid="leaderboard-page" style={{ fontFamily: "'NTR', 'Inter', system-ui, -apple-system, sans-serif" }}>
       <Navigation />
       
       <div className="pt-28 pb-16">
@@ -123,12 +123,14 @@ export default function Leaderboard() {
                     {creator.rank === 1 ? <Crown className="h-4 w-4" /> : creator.rank}
                   </div>
 
-                  {/* Avatar */}
+                  {/* User Info */}
                   <div className="text-center mb-4 mt-2">
-                    <div className={`w-16 h-16 bg-gradient-to-r ${creator.color} rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-2`}>
-                      {creator.avatar}
-                    </div>
-                    <h3 className="text-xl font-bold text-white">{creator.name}</h3>
+                    <h3 className="text-xl font-bold text-white mb-2 flex items-center justify-center">
+                      <span className={`w-6 h-6 bg-gradient-to-r ${creator.color} flex items-center justify-center text-white font-bold text-sm mr-2`}>
+                        {creator.avatar}
+                      </span>
+                      {creator.name}
+                    </h3>
                     <span className={`text-sm px-2 py-1 bg-gradient-to-r ${creator.color} text-white rounded-full`}>
                       {creator.badge}
                     </span>

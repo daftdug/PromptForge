@@ -58,7 +58,7 @@ export default function Tags() {
   ];
 
   return (
-    <div className="min-h-screen bg-prompt-dark text-white font-sans overflow-x-hidden" data-testid="tags-page">
+    <div className="min-h-screen bg-prompt-dark text-white overflow-x-hidden" data-testid="tags-page" style={{ fontFamily: "'NTR', 'Inter', system-ui, -apple-system, sans-serif" }}>
       <Navigation />
       
       <div className="pt-28 pb-16">
