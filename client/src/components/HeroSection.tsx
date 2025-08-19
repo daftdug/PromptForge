@@ -36,12 +36,12 @@ export default function HeroSection() {
               Behind Every Great<br />
               AI Response
             </h1>
-            <p className="text-xl lg:text-2xl text-gray-300 mb-10 leading-relaxed" data-testid="hero-description">
+            <p className="text-xl lg:text-2xl text-white mb-10 leading-relaxed" data-testid="hero-description">
               Join thousands of creators sharing, remixing, and perfecting prompts for{" "}
-              <span className="text-white font-semibold">ChatGPT</span>,{" "}
-              <span className="text-white font-semibold">Claude</span>,{" "}
-              <span className="text-white font-semibold">Gemini</span>, and beyond.{" "}
-              <span className="text-gray-400 font-medium">No login required.</span>
+              <span className="font-semibold">ChatGPT</span>,{" "}
+              <span className="font-semibold">Claude</span>,{" "}
+              <span className="font-semibold">Gemini</span>, and beyond.{" "}
+              <span className="font-medium">No login required.</span>
             </p>
             
             {/* CTA Buttons */}
