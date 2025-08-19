@@ -62,11 +62,9 @@ export default {
           ring: "var(--sidebar-ring)",
         },
         'prompt-purple': 'var(--prompt-purple)',
-        'prompt-pink': 'var(--prompt-pink)',
-        'prompt-cyan': 'var(--prompt-cyan)',
-        'prompt-orange': 'var(--prompt-orange)',
         'prompt-dark': 'var(--prompt-dark)',
         'prompt-slate': 'var(--prompt-slate)',
+        'prompt-accent': 'var(--prompt-accent)',
       },
       fontFamily: {
         sans: ["var(--font-sans)"],
@@ -77,8 +75,7 @@ export default {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'hero-gradient': 'linear-gradient(135deg, var(--prompt-dark) 0%, var(--prompt-slate) 50%, hsl(256, 65%, 40%) 100%)',
-        'card-gradient': 'linear-gradient(135deg, hsla(262, 83%, 70%, 0.1) 0%, hsla(186, 100%, 42%, 0.1) 100%)',
-        'cta-gradient': 'linear-gradient(135deg, var(--prompt-purple) 0%, var(--prompt-pink) 100%)',
+        'card-gradient': 'linear-gradient(135deg, hsla(262, 83%, 70%, 0.1) 0%, hsla(217, 19%, 27%, 0.2) 100%)',
       },
       keyframes: {
         "accordion-down": {
