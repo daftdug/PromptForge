@@ -95,9 +95,16 @@ export default function HeroSection() {
               {/* Subtle overlay for branding */}
               <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-prompt-purple/20 pointer-events-none"></div>
               
-              {/* Live Demo indicator */}
-              <div className="absolute bottom-4 right-4 bg-prompt-purple/80 backdrop-blur-sm rounded-full px-3 py-1 text-white text-sm">
-                Live Demo
+              {/* Demo button overlay */}
+              <div className="absolute top-6 left-6">
+                <Button
+                  onClick={handleStartFree}
+                  className="bg-prompt-purple/90 backdrop-blur-sm hover:bg-prompt-purple text-white px-4 py-2 rounded-lg font-medium text-sm transition-all duration-300"
+                  data-testid="demo-overlay-button"
+                >
+                  <Play className="mr-2 h-4 w-4" />
+                  Try Live Demo
+                </Button>
               </div>
             </div>
           </div>
