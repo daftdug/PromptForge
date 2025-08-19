@@ -92,8 +92,8 @@ export default function HeroSection() {
                 </div>
               </div>
               
-              {/* Subtle overlay for branding */}
-              <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-prompt-purple/20 pointer-events-none"></div>
+              {/* Dynamic overlay for visual interest */}
+              <div className="absolute inset-0 bg-gradient-to-br from-prompt-purple/30 via-transparent to-prompt-accent/40 pointer-events-none"></div>
               
               {/* Demo button overlay */}
               <div className="absolute top-6 left-6">
