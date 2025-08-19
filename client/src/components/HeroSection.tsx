@@ -31,12 +31,12 @@ export default function HeroSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="text-center lg:text-left">
-            <h1 className="text-4xl lg:text-7xl font-black mb-8 leading-tight drop-shadow-lg text-white" data-testid="hero-title" style={{ textShadow: '0 4px 12px rgba(0, 0, 0, 0.5)' }}>
+            <h1 className="text-4xl lg:text-7xl font-black mb-8 leading-tight text-white" data-testid="hero-title">
               Discover the Magic<br />
               Behind Every Great<br />
               AI Response
             </h1>
-            <p className="text-xl lg:text-2xl text-gray-300 mb-10 leading-relaxed drop-shadow-md" data-testid="hero-description" style={{ textShadow: '0 2px 8px rgba(0, 0, 0, 0.6)' }}>
+            <p className="text-xl lg:text-2xl text-gray-300 mb-10 leading-relaxed" data-testid="hero-description">
               Join thousands of creators sharing, remixing, and perfecting prompts for{" "}
               <span className="text-white font-semibold">ChatGPT</span>,{" "}
               <span className="text-white font-semibold">Claude</span>,{" "}
