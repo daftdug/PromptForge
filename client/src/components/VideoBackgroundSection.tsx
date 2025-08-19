@@ -40,8 +40,8 @@ export default function VideoBackgroundSection() {
           <source src="/attached_assets/4146195-uhd_3840_2160_25fps_1755619470462.mp4" type="video/mp4" />
           <source src="/attached_assets/4426378-uhd_3840_2160_25fps_1755619470465.mp4" type="video/mp4" />
         </video>
-        {/* Gradient overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-br from-prompt-purple/60 via-prompt-dark/70 to-prompt-cyan/60"></div>
+        {/* Layered animated gradient overlay */}
+        <div className="absolute inset-0 bg-video-gradient"></div>
         {/* Fallback gradient background */}
         <div className="absolute inset-0 bg-gradient-to-br from-prompt-purple/40 via-prompt-dark/60 to-prompt-cyan/40 video-fallback"></div>
       </div>
