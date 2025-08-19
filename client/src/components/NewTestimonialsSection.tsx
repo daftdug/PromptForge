@@ -72,24 +72,13 @@ export default function TestimonialsSection() {
                 "{testimonial.text}"
               </p>
               
-              {/* Author info with background image for first testimonial */}
+              {/* Author info */}
               <div className="flex items-center">
-                {index === 0 ? (
-                  <div className="relative w-12 h-12 rounded-full overflow-hidden mr-4">
-                    <img 
-                      src={businessPersonImage} 
-                      alt={testimonial.name}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-br from-prompt-purple/30 to-prompt-cyan/30"></div>
-                  </div>
-                ) : (
-                  <div className={`w-12 h-12 bg-${testimonial.color}/20 rounded-full flex items-center justify-center mr-4`}>
-                    <span className={`text-${testimonial.color} font-bold text-lg`}>
-                      {testimonial.name.charAt(0)}
-                    </span>
-                  </div>
-                )}
+                <div className={`w-12 h-12 bg-${testimonial.color}/20 rounded-full flex items-center justify-center mr-4`}>
+                  <span className={`text-${testimonial.color} font-bold text-lg`}>
+                    {testimonial.name.charAt(0)}
+                  </span>
+                </div>
                 <div>
                   <div className="font-semibold text-white" data-testid={`testimonial-name-${index}`}>
                     {testimonial.name}

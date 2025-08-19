@@ -79,41 +79,28 @@ export default function TrainingSection() {
           
           {/* Right Content - Training Visual */}
           <div className="relative">
-            <div className="relative rounded-3xl border border-prompt-purple/20 h-96 overflow-hidden" data-testid="training-visual">
-              {/* Background Image */}
-              <div className="absolute inset-0">
-                <img 
-                  src={laptopImage} 
-                  alt="Professional working on laptop" 
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-br from-prompt-dark/80 via-prompt-purple/60 to-prompt-cyan/40"></div>
-              </div>
-              
-              {/* Content Overlay */}
-              <div className="relative z-10 p-8 h-full">
-                <div className="grid grid-cols-2 gap-4 h-full">
-                  {trainingModules.map((module, index) => (
-                    <div 
-                      key={module.title}
-                      className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20"
-                      data-testid={`training-module-${index}`}
-                    >
-                      <div className="mb-2">
-                        {module.icon === "brain" && <GraduationCap className="text-white h-8 w-8" />}
-                        {module.icon === "chart-line" && <Award className="text-prompt-cyan h-8 w-8" />}
-                        {module.icon === "cogs" && <Wrench className="text-prompt-pink h-8 w-8" />}
-                        {module.icon === "trophy" && <Award className="text-prompt-orange h-8 w-8" />}
-                      </div>
-                      <h4 className="font-semibold text-sm mb-1 text-white" data-testid={`training-module-title-${index}`}>
-                        {module.title}
-                      </h4>
-                      <p className="text-xs text-gray-200" data-testid={`training-module-description-${index}`}>
-                        {module.description}
-                      </p>
+            <div className="bg-card-gradient rounded-3xl p-8 border border-prompt-purple/20 h-96" data-testid="training-visual">
+              <div className="grid grid-cols-2 gap-4 h-full">
+                {trainingModules.map((module, index) => (
+                  <div 
+                    key={module.title}
+                    className={`bg-${module.color}/20 rounded-xl p-4 border border-${module.color}/30`}
+                    data-testid={`training-module-${index}`}
+                  >
+                    <div className="mb-2">
+                      {module.icon === "brain" && <GraduationCap className={`text-${module.color} h-8 w-8`} />}
+                      {module.icon === "chart-line" && <Award className={`text-${module.color} h-8 w-8`} />}
+                      {module.icon === "cogs" && <Wrench className={`text-${module.color} h-8 w-8`} />}
+                      {module.icon === "trophy" && <Award className={`text-${module.color} h-8 w-8`} />}
                     </div>
-                  ))}
-                </div>
+                    <h4 className="font-semibold text-sm mb-1" data-testid={`training-module-title-${index}`}>
+                      {module.title}
+                    </h4>
+                    <p className="text-xs text-gray-400" data-testid={`training-module-description-${index}`}>
+                      {module.description}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

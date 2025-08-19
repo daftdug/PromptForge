@@ -60,42 +60,21 @@ export default function FeaturesShowcase() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => {
             const IconComponent = feature.icon;
-            const isFirstCard = index === 0;
             return (
               <div 
                 key={feature.title}
-                className="group relative rounded-2xl border border-prompt-purple/20 hover:border-prompt-purple/40 transition-all duration-300 hover:transform hover:scale-105 overflow-hidden"
+                className="bg-card-gradient rounded-2xl p-8 border border-prompt-purple/20 hover:border-prompt-purple/40 transition-all duration-300 hover:transform hover:scale-105"
                 data-testid={`feature-card-${index}`}
               >
-                {/* Background for first card */}
-                {isFirstCard && (
-                  <div className="absolute inset-0">
-                    <img 
-                      src={keyboardImage} 
-                      alt="Colorful keyboard setup" 
-                      className="w-full h-full object-cover opacity-30"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-br from-prompt-purple/60 to-prompt-cyan/40"></div>
-                  </div>
-                )}
-                
-                {/* Card gradient background for other cards */}
-                {!isFirstCard && (
-                  <div className="absolute inset-0 bg-card-gradient"></div>
-                )}
-                
-                {/* Content */}
-                <div className="relative z-10 p-8">
-                  <div className={`w-16 h-16 ${isFirstCard ? 'bg-white/20 backdrop-blur-sm' : `bg-${feature.color}/20`} rounded-2xl flex items-center justify-center mb-6`}>
-                    <IconComponent className={`${isFirstCard ? 'text-white' : `text-${feature.color}`} h-8 w-8`} />
-                  </div>
-                  <h3 className={`text-2xl font-bold mb-4 ${isFirstCard ? 'text-white' : 'text-white'}`} data-testid={`feature-title-${index}`}>
-                    {feature.title}
-                  </h3>
-                  <p className={`leading-relaxed ${isFirstCard ? 'text-gray-100' : 'text-gray-300'}`} data-testid={`feature-description-${index}`}>
-                    {feature.description}
-                  </p>
+                <div className={`w-16 h-16 bg-${feature.color}/20 rounded-2xl flex items-center justify-center mb-6`}>
+                  <IconComponent className={`text-${feature.color} h-8 w-8`} />
                 </div>
+                <h3 className="text-2xl font-bold mb-4" data-testid={`feature-title-${index}`}>
+                  {feature.title}
+                </h3>
+                <p className="text-gray-300 leading-relaxed" data-testid={`feature-description-${index}`}>
+                  {feature.description}
+                </p>
               </div>
             );
           })}
