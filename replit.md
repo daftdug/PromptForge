@@ -23,8 +23,8 @@ Enhanced the landing page with professional visual assets and interactive elemen
 ✓ Restored demo button overlay on hero video with centered "Watch Demo" button and Play icon
 ✓ Increased video container height for better visual presence (h-80 mobile, h-96 desktop)
 ✓ Enhanced hero gradient with vibrant blue tones for more dynamic visual appeal
-✓ Updated hero gradient to darker, stronger 4-color diagonal with deep royal purple, forest green, dark violet, and dark teal
-✓ Added smooth animation to hero gradient with 15-second cycling movement for dramatic visual appeal
+✓ Updated hero gradient to pink, raspberry, and purple color palette with smooth 15-second animation for elegant visual appeal
+✓ Enhanced font consistency by ensuring Google NTR font loads properly across all components
 ✓ Scaled "See Prompt Magic in Action" section to match hero area size and proportions (min-h-[70vh], larger text, enhanced button)
 ✓ Updated navigation to match promptmagic.dev structure with Courses (first), Prompts, Tags, Leaderboard, and Pricing links
 ✓ Increased scale of header items: larger logo (w-10 h-10), bigger text (text-2xl), enhanced navigation links (text-lg font-medium)
