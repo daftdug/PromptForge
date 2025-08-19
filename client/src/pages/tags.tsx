@@ -149,17 +149,13 @@ export default function Tags() {
 
           {/* All Tags Cloud */}
           <div className="mb-12">
-            <h2 className="text-3xl font-bold mb-8">All Tags</h2>
-            <div className="bg-card-gradient rounded-xl p-6 border border-prompt-purple/20">
-              <div className="flex flex-wrap gap-2">
+            <h2 className="text-5xl font-bold mb-10">All Tags</h2>
+            <div className="bg-card-gradient rounded-xl p-10 border border-prompt-purple/20">
+              <div className="flex flex-wrap gap-4">
                 {allTags.map((tag, index) => (
                   <button
                     key={tag}
-                    className={`text-base px-4 py-2 bg-prompt-slate/30 text-gray-300 hover:text-white hover:bg-prompt-purple/20 rounded-full transition-all duration-200 transform hover:scale-105`}
-                    style={{
-                      fontSize: `${0.75 + (Math.random() * 0.5)}rem`,
-                      opacity: 0.7 + (Math.random() * 0.3)
-                    }}
+                    className={`text-xl px-6 py-4 bg-prompt-slate/30 text-gray-300 hover:text-white hover:bg-prompt-purple/20 rounded-full transition-all duration-200 transform hover:scale-105`}
                     onClick={() => window.open('https://promptmagic.dev', '_blank')}
                     data-testid={`all-tag-${tag}`}
                   >
@@ -173,7 +169,7 @@ export default function Tags() {
           {/* CTA */}
           <div className="text-center">
             <Button
-              className="bg-gradient-to-r from-prompt-cyan to-prompt-pink hover:shadow-lg hover:shadow-prompt-cyan/25 text-white px-8 py-3 rounded-xl font-semibold"
+              className="bg-gradient-to-r from-prompt-cyan to-prompt-pink hover:shadow-lg hover:shadow-prompt-cyan/25 text-white px-12 py-6 rounded-xl text-2xl font-semibold"
               onClick={() => window.open('https://promptmagic.dev', '_blank')}
               data-testid="explore-prompts-button"
             >
