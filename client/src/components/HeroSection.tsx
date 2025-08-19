@@ -103,7 +103,7 @@ export default function HeroSection() {
                   data-testid="demo-overlay-button"
                 >
                   <Play className="mr-2 h-4 w-4" />
-                  Try Live Demo
+                  Try Demo
                 </Button>
               </div>
             </div>
