@@ -118,18 +118,18 @@ export default function Leaderboard() {
                       #{creator.rank}
                     </span>
                     <div>
-                      <h3 className="text-2xl font-bold text-white flex items-center">
-                        <span className="w-8 h-8 bg-prompt-purple rounded-full flex items-center justify-center text-white font-bold text-base mr-3">
+                      <h3 className="text-4xl font-bold text-white flex items-center">
+                        <span className="w-12 h-12 bg-prompt-purple rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
                           {creator.avatar}
                         </span>
                         {creator.name}
                       </h3>
-                      <p className="text-gray-400 text-base">{creator.badge}</p>
+                      <p className="text-gray-400 text-xl">{creator.badge}</p>
                     </div>
                   </div>
 
                   {/* Simple stats */}
-                  <div className="text-gray-300 text-xl">
+                  <div className="text-gray-300 text-3xl">
                     <p><span className="font-bold text-white">{creator.prompts}</span> prompts</p>
                     <p><span className="font-bold text-white">{creator.likes.toLocaleString()}</span> likes</p>
                   </div>
@@ -194,14 +194,14 @@ export default function Leaderboard() {
                       <span className="text-prompt-orange font-bold text-xl mr-4">
                         #{contributor.rank}
                       </span>
-                      <span className="w-8 h-8 bg-prompt-purple rounded-full flex items-center justify-center text-white font-bold text-base mr-4">
+                      <span className="w-12 h-12 bg-prompt-purple rounded-full flex items-center justify-center text-white font-bold text-xl mr-5">
                         {contributor.name.split(' ').map(n => n[0]).join('')}
                       </span>
-                      <span className="font-semibold text-xl">{contributor.name}</span>
+                      <span className="font-semibold text-3xl">{contributor.name}</span>
                     </div>
-                    <div className="flex items-center space-x-6 text-gray-400">
-                      <span className="text-lg">{contributor.prompts} prompts</span>
-                      <span className="text-lg">{contributor.likes.toLocaleString()} likes</span>
+                    <div className="flex items-center space-x-8 text-gray-400">
+                      <span className="text-2xl">{contributor.prompts} prompts</span>
+                      <span className="text-2xl">{contributor.likes.toLocaleString()} likes</span>
                     </div>
                   </div>
                 ))}

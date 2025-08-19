@@ -192,7 +192,7 @@ export default function Prompts() {
                         </span>
                       )}
                     </div>
-                    <h3 className="text-2xl font-bold mb-3" data-testid={`prompt-title-${prompt.id}`}>
+                    <h3 className="text-4xl font-bold mb-4" data-testid={`prompt-title-${prompt.id}`}>
                       {prompt.title}
                     </h3>
                   </div>
@@ -207,7 +207,7 @@ export default function Prompts() {
                 </div>
 
                 {/* Description */}
-                <p className="text-gray-300 text-lg mb-4 leading-relaxed" data-testid={`prompt-description-${prompt.id}`}>
+                <p className="text-gray-300 text-2xl mb-6 leading-relaxed" data-testid={`prompt-description-${prompt.id}`}>
                   {prompt.description}
                 </p>
 
@@ -216,7 +216,7 @@ export default function Prompts() {
                   {prompt.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-base px-4 py-2 bg-prompt-slate/40 text-gray-300 rounded font-medium"
+                      className="text-xl px-5 py-3 bg-prompt-slate/40 text-gray-300 rounded font-medium"
                     >
                       #{tag}
                     </span>
@@ -224,7 +224,7 @@ export default function Prompts() {
                 </div>
 
                 {/* Stats */}
-                <div className="flex items-center justify-between mb-4 text-lg text-gray-400">
+                <div className="flex items-center justify-between mb-6 text-2xl text-gray-400">
                   <div className="flex items-center space-x-6">
                     <div className="flex items-center">
                       <Heart className="h-5 w-5 mr-2" />
@@ -243,11 +243,11 @@ export default function Prompts() {
 
                 {/* Author and Action */}
                 <div className="flex items-center justify-between">
-                  <span className="text-lg text-gray-400">by {prompt.author}</span>
+                  <span className="text-2xl text-gray-400">by {prompt.author}</span>
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                       <Button
-                        className="bg-prompt-purple hover:bg-prompt-purple/90 text-white px-8 py-4 rounded-lg text-lg font-medium"
+                        className="bg-prompt-purple hover:bg-prompt-purple/90 text-white px-10 py-5 rounded-lg text-2xl font-medium"
                         data-testid={`use-prompt-${prompt.id}`}
                       >
                         Use Prompt

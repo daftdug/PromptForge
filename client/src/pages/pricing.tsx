@@ -133,19 +133,19 @@ export default function Pricing() {
                 )}
 
                 <div className="text-center mb-8">
-                  <h3 className="text-4xl font-bold text-prompt-cyan mb-4">{plan.name}</h3>
-                  <div className="mb-6">
-                    <div className="flex items-center justify-center gap-2">
-                      <span className="text-6xl font-black">{plan.price}</span>
-                      <span className="text-gray-400 text-2xl">/ {plan.period}</span>
+                  <h3 className="text-5xl font-bold text-prompt-cyan mb-6">{plan.name}</h3>
+                  <div className="mb-8">
+                    <div className="flex items-center justify-center gap-3">
+                      <span className="text-8xl font-black">{plan.price}</span>
+                      <span className="text-gray-400 text-3xl">/ {plan.period}</span>
                     </div>
                     {plan.originalPrice && (
-                      <div className="text-gray-500 line-through text-lg mt-2">
+                      <div className="text-gray-500 line-through text-2xl mt-3">
                         {plan.originalPrice} / year
                       </div>
                     )}
                   </div>
-                  <p className="text-gray-300 text-xl">{plan.description}</p>
+                  <p className="text-gray-300 text-2xl">{plan.description}</p>
                 </div>
 
                 {/* Features */}
@@ -153,14 +153,14 @@ export default function Pricing() {
                   <ul className="space-y-3">
                     {plan.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-start">
-                        <Check className="text-prompt-cyan h-6 w-6 mr-4 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-300 text-lg">{feature}</span>
+                        <Check className="text-prompt-cyan h-8 w-8 mr-5 mt-1 flex-shrink-0" />
+                        <span className="text-gray-300 text-2xl">{feature}</span>
                       </li>
                     ))}
                     {plan.limitations.map((limitation, limitIndex) => (
                       <li key={`limit-${limitIndex}`} className="flex items-start">
-                        <X className="text-gray-500 h-6 w-6 mr-4 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-500 text-lg">{limitation}</span>
+                        <X className="text-gray-500 h-8 w-8 mr-5 mt-1 flex-shrink-0" />
+                        <span className="text-gray-500 text-2xl">{limitation}</span>
                       </li>
                     ))}
                   </ul>
@@ -168,7 +168,7 @@ export default function Pricing() {
 
                 {/* CTA Button */}
                 <Button
-                  className={`w-full py-4 rounded-xl font-semibold text-lg transition-all duration-300 ${
+                  className={`w-full py-6 rounded-xl font-semibold text-2xl transition-all duration-300 ${
                     plan.popular
                       ? 'bg-gradient-to-r from-prompt-cyan to-prompt-purple hover:shadow-lg hover:shadow-prompt-cyan/25 text-white'
                       : 'bg-prompt-purple/20 border border-prompt-purple/40 text-prompt-purple hover:bg-prompt-purple hover:text-white'
