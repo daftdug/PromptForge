@@ -9,6 +9,8 @@ import Tags from "@/pages/tags";
 import Leaderboard from "@/pages/leaderboard";
 import Courses from "@/pages/courses";
 import Pricing from "@/pages/pricing";
+import SignUp from "@/pages/signup";
+import SignIn from "@/pages/signin";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -20,6 +22,8 @@ function Router() {
       <Route path="/leaderboard" component={Leaderboard} />
       <Route path="/courses" component={Courses} />
       <Route path="/pricing" component={Pricing} />
+      <Route path="/signup" component={SignUp} />
+      <Route path="/signin" component={SignIn} />
       <Route component={NotFound} />
     </Switch>
   );

@@ -213,7 +213,7 @@ export default function Leaderboard() {
           <div className="text-center">
             <Button
               className="bg-gradient-to-r from-prompt-pink to-prompt-orange hover:shadow-lg hover:shadow-prompt-pink/25 text-white px-8 py-3 rounded-xl font-semibold"
-              onClick={() => window.open('https://promptmagic.dev', '_blank')}
+              onClick={() => window.open('/signup', '_self')}
               data-testid="join-community-button"
             >
               <Users className="mr-2 h-5 w-5" />
