@@ -11,17 +11,16 @@ export default function Pricing() {
       period: "forever",
       description: "Perfect for getting started with AI prompts",
       features: [
-        "10 prompt uses per month",
-        "Access to basic templates",
-        "Community support",
+        "Browse unlimited prompts",
+        "Access to community templates",
         "Basic prompt editor",
-        "Public prompt sharing"
+        "Public prompt sharing",
+        "Community support"
       ],
       limitations: [
-        "Limited to 10 uses/month",
-        "No custom categories",
-        "No priority support",
-        "Basic analytics only"
+        "No private collections",
+        "No advanced analytics",
+        "Basic editor only"
       ],
       ctaText: "Get Started Free",
       popular: false,
@@ -29,45 +28,24 @@ export default function Pricing() {
     },
     {
       name: "Pro",
-      price: "$29",
+      price: "$9.99",
       period: "per month",
-      description: "For professionals and power users",
+      description: "For professionals and creators",
       features: [
-        "Unlimited prompt uses",
-        "Access to all premium templates",
-        "Priority support",
+        "Everything in Free",
+        "Unlimited private collections",
         "Advanced prompt editor",
-        "Private prompt collections",
+        "Priority support",
+        "Advanced analytics & insights",
         "Custom categories & tags",
-        "Advanced analytics",
-        "API access",
-        "Team collaboration (5 members)"
+        "Team collaboration",
+        "Export & API access",
+        "Early access to new features"
       ],
       limitations: [],
-      ctaText: "Start Pro Trial",
+      ctaText: "Upgrade Now",
       popular: true,
       color: "prompt-cyan"
-    },
-    {
-      name: "Enterprise",
-      price: "$99",
-      period: "per month",
-      description: "For teams and organizations",
-      features: [
-        "Everything in Pro",
-        "Unlimited team members",
-        "Custom integrations",
-        "Advanced security & compliance",
-        "Dedicated account manager",
-        "Custom training & onboarding",
-        "SLA guarantee",
-        "Custom prompt marketplace",
-        "White-label options"
-      ],
-      limitations: [],
-      ctaText: "Contact Sales",
-      popular: false,
-      color: "prompt-pink"
     }
   ];
 

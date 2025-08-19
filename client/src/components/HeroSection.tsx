@@ -31,14 +31,14 @@ export default function HeroSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="text-center lg:text-left">
-            <h1 className="text-3xl lg:text-5xl font-black mb-6 leading-tight" data-testid="hero-title">
+            <h1 className="text-4xl lg:text-7xl font-black mb-8 leading-tight" data-testid="hero-title">
               Discover the Magic<br />
               Behind Every Great<br />
               <span className="bg-gradient-to-r from-prompt-purple to-white bg-clip-text text-transparent">
                 AI Response
               </span>
             </h1>
-            <p className="text-base lg:text-lg text-gray-300 mb-8 leading-relaxed" data-testid="hero-description">
+            <p className="text-xl lg:text-2xl text-gray-300 mb-10 leading-relaxed" data-testid="hero-description">
               Join thousands of creators sharing, remixing, and perfecting prompts for{" "}
               <span className="text-white font-semibold">ChatGPT</span>,{" "}
               <span className="text-white font-semibold">Claude</span>,{" "}
@@ -50,19 +50,19 @@ export default function HeroSection() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Link href="/courses">
                 <Button 
-                  className="bg-gradient-to-r from-prompt-purple to-prompt-cyan hover:shadow-lg hover:shadow-prompt-purple/25 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105"
+                  className="bg-gradient-to-r from-prompt-purple to-prompt-cyan hover:shadow-lg hover:shadow-prompt-purple/25 text-white px-10 py-5 rounded-xl font-bold text-xl transition-all duration-300 transform hover:scale-105"
                   data-testid="button-master-prompts"
                 >
-                  <BookOpen className="mr-3 h-5 w-5" />
+                  <BookOpen className="mr-3 h-6 w-6" />
                   Master AI Prompts
                 </Button>
               </Link>
               <Link href="/prompts">
                 <Button 
-                  className="bg-gradient-to-r from-prompt-cyan to-prompt-pink hover:shadow-lg hover:shadow-prompt-cyan/25 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105"
+                  className="bg-gradient-to-r from-prompt-cyan to-prompt-pink hover:shadow-lg hover:shadow-prompt-cyan/25 text-white px-10 py-5 rounded-xl font-bold text-xl transition-all duration-300 transform hover:scale-105"
                   data-testid="button-explore-prompts"
                 >
-                  <Sparkles className="mr-3 h-5 w-5" />
+                  <Sparkles className="mr-3 h-6 w-6" />
                   Explore Prompts Free
                 </Button>
               </Link>
@@ -108,30 +108,6 @@ export default function HeroSection() {
                   Watch Demo
                 </Button>
               </div>
-            </div>
-          </div>
-        </div>
-        
-        {/* Creator Statistics */}
-        <div className="mt-16 text-center">
-          <p className="text-lg text-gray-300 mb-8 font-medium" data-testid="hero-stats-intro">
-            Join 10,000+ creators who've discovered their perfect prompts
-          </p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="text-center" data-testid="stat-prompts-shared">
-              <div className="text-3xl lg:text-4xl font-black text-white mb-2">50K+</div>
-              <div className="text-gray-400 font-medium">Prompts Shared</div>
-            </div>
-            
-            <div className="text-center" data-testid="stat-monthly-users">
-              <div className="text-3xl lg:text-4xl font-black text-white mb-2">1M+</div>
-              <div className="text-gray-400 font-medium">Monthly Users</div>
-            </div>
-            
-            <div className="text-center" data-testid="stat-happy-creators">
-              <div className="text-3xl lg:text-4xl font-black text-white mb-2">10K+</div>
-              <div className="text-gray-400 font-medium">Happy Creators</div>
             </div>
           </div>
         </div>

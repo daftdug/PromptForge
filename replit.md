@@ -26,6 +26,9 @@ Enhanced the landing page with professional visual assets and interactive elemen
 ✓ Updated hero gradient to pink, raspberry, and purple color palette with smooth 15-second animation for elegant visual appeal
 ✓ Enhanced font consistency by ensuring Google NTR font loads properly across all components
 ✓ Scaled "See Prompt Magic in Action" section to match hero area size and proportions (min-h-[70vh], larger text, enhanced button)
+✓ Scaled up hero section typography to match other pages: h1 to text-4xl lg:text-7xl, description to text-xl lg:text-2xl, and enhanced CTA buttons
+✓ Updated pricing page to two-tier structure (Free and Pro at $9.99) matching reference design
+✓ Removed creator statistics section from hero area for cleaner, more focused design
 ✓ Updated navigation to match promptmagic.dev structure with Courses (first), Prompts, Tags, Leaderboard, and Pricing links
 ✓ Increased scale of header items: larger logo (w-10 h-10), bigger text (text-2xl), enhanced navigation links (text-lg font-medium)
 ✓ Replaced single "Start Exploring" button with two cleverly labeled CTA buttons:
