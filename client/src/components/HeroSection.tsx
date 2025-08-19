@@ -111,6 +111,30 @@ export default function HeroSection() {
             </div>
           </div>
         </div>
+        
+        {/* Creator Statistics */}
+        <div className="mt-16 text-center">
+          <p className="text-lg text-gray-300 mb-8 font-medium" data-testid="hero-stats-intro">
+            Join 10,000+ creators who've discovered their perfect prompts
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <div className="text-center" data-testid="stat-prompts-shared">
+              <div className="text-3xl lg:text-4xl font-black text-white mb-2">50K+</div>
+              <div className="text-gray-400 font-medium">Prompts Shared</div>
+            </div>
+            
+            <div className="text-center" data-testid="stat-monthly-users">
+              <div className="text-3xl lg:text-4xl font-black text-white mb-2">1M+</div>
+              <div className="text-gray-400 font-medium">Monthly Users</div>
+            </div>
+            
+            <div className="text-center" data-testid="stat-happy-creators">
+              <div className="text-3xl lg:text-4xl font-black text-white mb-2">10K+</div>
+              <div className="text-gray-400 font-medium">Happy Creators</div>
+            </div>
+          </div>
+        </div>
       </div>
       
 
