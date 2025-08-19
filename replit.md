@@ -24,6 +24,7 @@ Enhanced the landing page with professional visual assets and interactive elemen
 ✓ Increased video container height for better visual presence (h-80 mobile, h-96 desktop)
 ✓ Enhanced hero gradient with vibrant blue tones for more dynamic visual appeal
 ✓ Updated hero gradient to darker, stronger 3-color diagonal: deep purple → dark cyan → deep pink (upper left to lower right)
+✓ Added smooth animation to hero gradient with 8-second cycling movement for dynamic visual appeal
 
 # User Preferences
 
