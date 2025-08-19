@@ -1,7 +1,8 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Play, Clock, Users, Star, BookOpen, Award, CheckCircle } from "lucide-react";
+import { Play, Clock, Users, Star, BookOpen, Award, CheckCircle, Volume2, FileText } from "lucide-react";
+import demoVideo from "@assets/5977124-uhd_3840_2160_25fps_1755619421750.mp4";
 
 export default function Courses() {
   const courses = [
@@ -121,13 +122,13 @@ export default function Courses() {
       <div className="pt-20 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
-          <div className="text-center mb-16">
-            <h1 className="text-4xl lg:text-6xl font-black mb-6 leading-tight" data-testid="courses-title">
+          <div className="text-center mb-20">
+            <h1 className="text-5xl lg:text-7xl font-black mb-8 leading-tight" data-testid="courses-title">
               <span className="bg-gradient-to-r from-prompt-orange to-prompt-purple bg-clip-text text-transparent">
                 Professional Training
               </span>
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto" data-testid="courses-description">
+            <p className="text-2xl lg:text-3xl text-gray-300 max-w-4xl mx-auto leading-relaxed" data-testid="courses-description">
               Master AI prompt engineering with expert-led courses designed for professionals, 
               creators, and business leaders.
             </p>
@@ -135,7 +136,7 @@ export default function Courses() {
 
           {/* Featured Courses */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold mb-8">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-12">
               <span className="bg-gradient-to-r from-prompt-cyan to-prompt-purple bg-clip-text text-transparent">
                 Featured Courses
               </span>
@@ -148,42 +149,68 @@ export default function Courses() {
                   className="bg-card-gradient rounded-2xl overflow-hidden border border-prompt-purple/20 hover:border-prompt-cyan/40 transition-all duration-300 hover:transform hover:scale-[1.02]"
                   data-testid={`featured-course-${course.id}`}
                 >
-                  <div className="relative h-48 bg-gradient-to-br from-prompt-purple/20 to-prompt-cyan/20">
+                  <div className="relative h-64 bg-gradient-to-br from-prompt-purple/20 to-prompt-cyan/20 overflow-hidden">
+                    <video
+                      muted
+                      loop
+                      playsInline
+                      className="w-full h-full object-cover"
+                      poster=""
+                    >
+                      <source src={demoVideo} type="video/mp4" />
+                    </video>
+                    <div className="absolute inset-0 bg-gradient-to-br from-prompt-purple/40 to-prompt-cyan/40"></div>
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <Play className="text-white h-16 w-16 opacity-80" />
+                      <Play className="text-white h-20 w-20 opacity-90 drop-shadow-lg" />
                     </div>
-                    <div className="absolute top-4 left-4 bg-prompt-orange text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    <div className="absolute top-4 left-4 bg-prompt-orange text-white px-4 py-2 rounded-full text-base font-semibold">
                       {course.level}
+                    </div>
+                    
+                    {/* Media Format Indicators */}
+                    <div className="absolute bottom-4 right-4 flex space-x-2">
+                      <div className="bg-black/60 backdrop-blur-sm rounded-lg px-3 py-2 flex items-center">
+                        <Play className="text-white h-4 w-4 mr-1" />
+                        <span className="text-white text-sm font-medium">Video</span>
+                      </div>
+                      <div className="bg-black/60 backdrop-blur-sm rounded-lg px-3 py-2 flex items-center">
+                        <Volume2 className="text-white h-4 w-4 mr-1" />
+                        <span className="text-white text-sm font-medium">Audio</span>
+                      </div>
+                      <div className="bg-black/60 backdrop-blur-sm rounded-lg px-3 py-2 flex items-center">
+                        <FileText className="text-white h-4 w-4 mr-1" />
+                        <span className="text-white text-sm font-medium">Text</span>
+                      </div>
                     </div>
                   </div>
 
-                  <div className="p-6">
-                    <div className="flex items-center justify-between mb-3">
-                      <div className="flex items-center space-x-3">
+                  <div className="p-8">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center space-x-4">
                         <div className="flex items-center">
-                          <Star className="text-yellow-400 h-4 w-4 fill-current" />
-                          <span className="text-sm text-gray-300 ml-1">{course.rating}</span>
+                          <Star className="text-yellow-400 h-5 w-5 fill-current" />
+                          <span className="text-lg text-gray-300 ml-2 font-medium">{course.rating}</span>
                         </div>
                         <div className="flex items-center text-gray-400">
-                          <Users className="h-4 w-4 mr-1" />
-                          <span className="text-sm">{course.students.toLocaleString()}</span>
+                          <Users className="h-5 w-5 mr-2" />
+                          <span className="text-lg">{course.students.toLocaleString()}</span>
                         </div>
                         <div className="flex items-center text-gray-400">
-                          <Clock className="h-4 w-4 mr-1" />
-                          <span className="text-sm">{course.duration}</span>
+                          <Clock className="h-5 w-5 mr-2" />
+                          <span className="text-lg">{course.duration}</span>
                         </div>
                       </div>
                     </div>
 
-                    <h3 className="text-xl font-bold mb-2 text-white">{course.title}</h3>
-                    <p className="text-gray-300 text-sm mb-4">{course.description}</p>
+                    <h3 className="text-2xl lg:text-3xl font-bold mb-4 text-white">{course.title}</h3>
+                    <p className="text-gray-300 text-lg mb-6 leading-relaxed">{course.description}</p>
 
-                    <div className="mb-4">
-                      <p className="text-prompt-cyan font-semibold text-sm mb-2">What you'll learn:</p>
-                      <div className="grid grid-cols-1 gap-1">
+                    <div className="mb-6">
+                      <p className="text-prompt-cyan font-semibold text-lg mb-4">What you'll learn:</p>
+                      <div className="grid grid-cols-1 gap-3">
                         {course.modules.slice(0, 3).map((module, idx) => (
-                          <div key={idx} className="flex items-center text-gray-300 text-sm">
-                            <CheckCircle className="h-3 w-3 text-prompt-cyan mr-2 flex-shrink-0" />
+                          <div key={idx} className="flex items-center text-gray-300 text-lg">
+                            <CheckCircle className="h-5 w-5 text-prompt-cyan mr-3 flex-shrink-0" />
                             {module}
                           </div>
                         ))}
@@ -191,12 +218,12 @@ export default function Courses() {
                     </div>
 
                     <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-2">
-                        <span className="text-2xl font-bold text-prompt-cyan">{course.price}</span>
-                        <span className="text-gray-500 line-through">{course.originalPrice}</span>
+                      <div className="flex items-center space-x-3">
+                        <span className="text-3xl lg:text-4xl font-bold text-prompt-cyan">{course.price}</span>
+                        <span className="text-xl text-gray-500 line-through">{course.originalPrice}</span>
                       </div>
                       <Button
-                        className="bg-gradient-to-r from-prompt-cyan to-prompt-purple hover:shadow-lg hover:shadow-prompt-cyan/25 text-white px-6 py-2 rounded-xl font-semibold"
+                        className="bg-gradient-to-r from-prompt-cyan to-prompt-purple hover:shadow-lg hover:shadow-prompt-cyan/25 text-white px-8 py-4 rounded-xl font-semibold text-lg"
                         onClick={() => window.open('https://promptmagic.dev', '_blank')}
                         data-testid={`enroll-course-${course.id}`}
                       >
@@ -211,7 +238,7 @@ export default function Courses() {
 
           {/* Learning Paths */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold mb-8">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-12">
               <span className="bg-gradient-to-r from-prompt-purple to-prompt-pink bg-clip-text text-transparent">
                 Learning Paths
               </span>
@@ -221,31 +248,31 @@ export default function Courses() {
               {learningPaths.map((path, index) => (
                 <div
                   key={index}
-                  className="bg-card-gradient rounded-2xl p-8 border border-prompt-purple/20 hover:border-prompt-pink/40 transition-all duration-300"
+                  className="bg-card-gradient rounded-2xl p-10 border border-prompt-purple/20 hover:border-prompt-pink/40 transition-all duration-300"
                   data-testid={`learning-path-${index}`}
                 >
-                  <Award className="text-prompt-pink h-12 w-12 mb-4" />
-                  <h3 className="text-2xl font-bold mb-3 text-white">{path.title}</h3>
-                  <p className="text-gray-300 mb-6">{path.description}</p>
+                  <Award className="text-prompt-pink h-16 w-16 mb-6" />
+                  <h3 className="text-3xl lg:text-4xl font-bold mb-4 text-white">{path.title}</h3>
+                  <p className="text-gray-300 mb-8 text-xl leading-relaxed">{path.description}</p>
                   
-                  <div className="flex items-center space-x-6 mb-6 text-gray-400">
+                  <div className="flex items-center space-x-8 mb-8 text-gray-400">
                     <div className="flex items-center">
-                      <BookOpen className="h-4 w-4 mr-2" />
-                      <span className="text-sm">{path.courses} courses</span>
+                      <BookOpen className="h-6 w-6 mr-3" />
+                      <span className="text-lg">{path.courses} courses</span>
                     </div>
                     <div className="flex items-center">
-                      <Clock className="h-4 w-4 mr-2" />
-                      <span className="text-sm">{path.duration}</span>
+                      <Clock className="h-6 w-6 mr-3" />
+                      <span className="text-lg">{path.duration}</span>
                     </div>
                   </div>
 
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-2">
-                      <span className="text-3xl font-bold text-prompt-pink">{path.price}</span>
-                      <span className="text-gray-500 line-through">{path.originalPrice}</span>
+                    <div className="flex items-center space-x-3">
+                      <span className="text-4xl lg:text-5xl font-bold text-prompt-pink">{path.price}</span>
+                      <span className="text-xl text-gray-500 line-through">{path.originalPrice}</span>
                     </div>
                     <Button
-                      className="bg-gradient-to-r from-prompt-pink to-prompt-purple hover:shadow-lg hover:shadow-prompt-pink/25 text-white px-6 py-3 rounded-xl font-semibold"
+                      className="bg-gradient-to-r from-prompt-pink to-prompt-purple hover:shadow-lg hover:shadow-prompt-pink/25 text-white px-8 py-4 rounded-xl font-semibold text-lg"
                       onClick={() => window.open('https://promptmagic.dev', '_blank')}
                       data-testid={`enroll-path-${index}`}
                     >
@@ -259,7 +286,7 @@ export default function Courses() {
 
           {/* All Courses */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold mb-8">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-12">
               <span className="bg-gradient-to-r from-prompt-cyan to-prompt-orange bg-clip-text text-transparent">
                 All Courses
               </span>
@@ -272,12 +299,35 @@ export default function Courses() {
                   className="bg-card-gradient rounded-xl overflow-hidden border border-prompt-purple/20 hover:border-prompt-cyan/40 transition-all duration-300 hover:transform hover:scale-[1.02]"
                   data-testid={`course-${course.id}`}
                 >
-                  <div className="relative h-32 bg-gradient-to-br from-prompt-purple/20 to-prompt-cyan/20">
+                  <div className="relative h-40 bg-gradient-to-br from-prompt-purple/20 to-prompt-cyan/20 overflow-hidden">
+                    <video
+                      muted
+                      loop
+                      playsInline
+                      className="w-full h-full object-cover"
+                      poster=""
+                    >
+                      <source src={demoVideo} type="video/mp4" />
+                    </video>
+                    <div className="absolute inset-0 bg-gradient-to-br from-prompt-purple/40 to-prompt-cyan/40"></div>
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <Play className="text-white h-8 w-8 opacity-80" />
+                      <Play className="text-white h-12 w-12 opacity-90 drop-shadow-lg" />
                     </div>
-                    <div className="absolute top-2 left-2 bg-prompt-orange text-white px-2 py-1 rounded-full text-xs font-semibold">
+                    <div className="absolute top-3 left-3 bg-prompt-orange text-white px-3 py-1 rounded-full text-sm font-semibold">
                       {course.level}
+                    </div>
+                    
+                    {/* Compact Media Format Indicators */}
+                    <div className="absolute bottom-2 right-2 flex space-x-1">
+                      <div className="bg-black/70 backdrop-blur-sm rounded-md p-1">
+                        <Play className="text-white h-3 w-3" />
+                      </div>
+                      <div className="bg-black/70 backdrop-blur-sm rounded-md p-1">
+                        <Volume2 className="text-white h-3 w-3" />
+                      </div>
+                      <div className="bg-black/70 backdrop-blur-sm rounded-md p-1">
+                        <FileText className="text-white h-3 w-3" />
+                      </div>
                     </div>
                   </div>
 
