@@ -81,19 +81,19 @@ export default function Pricing() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-16">
-            <h1 className="text-4xl lg:text-6xl font-black mb-6 leading-tight" data-testid="pricing-title">
+            <h1 className="text-5xl lg:text-7xl font-black mb-6 leading-tight" data-testid="pricing-title">
               <span className="bg-gradient-to-r from-prompt-orange to-prompt-purple bg-clip-text text-transparent">
                 Simple Pricing
               </span>
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8" data-testid="pricing-description">
+            <p className="text-2xl text-gray-300 max-w-4xl mx-auto mb-8 leading-relaxed" data-testid="pricing-description">
               Choose the perfect plan for your AI prompting needs. 
               Start free and upgrade as you grow.
             </p>
             
             {/* Monthly/Annual Toggle */}
-            <div className="flex items-center justify-center gap-4 mb-8">
-              <span className={`text-lg font-medium ${!isAnnual ? 'text-white' : 'text-gray-400'}`}>
+            <div className="flex items-center justify-center gap-6 mb-8">
+              <span className={`text-xl font-medium ${!isAnnual ? 'text-white' : 'text-gray-400'}`}>
                 Monthly
               </span>
               <Switch
@@ -102,11 +102,11 @@ export default function Pricing() {
                 className="data-[state=checked]:bg-prompt-purple"
                 data-testid="billing-toggle"
               />
-              <span className={`text-lg font-medium ${isAnnual ? 'text-white' : 'text-gray-400'}`}>
+              <span className={`text-xl font-medium ${isAnnual ? 'text-white' : 'text-gray-400'}`}>
                 Annual
               </span>
               {isAnnual && (
-                <span className="text-sm bg-green-500/20 text-green-400 px-2 py-1 rounded-full font-medium">
+                <span className="text-base bg-green-500/20 text-green-400 px-3 py-2 rounded-full font-medium">
                   Save 17%
                 </span>
               )}

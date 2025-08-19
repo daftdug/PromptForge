@@ -65,12 +65,12 @@ export default function Tags() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl lg:text-6xl font-black mb-6 leading-tight" data-testid="tags-title">
+            <h1 className="text-5xl lg:text-7xl font-black mb-6 leading-tight" data-testid="tags-title">
               <span className="bg-gradient-to-r from-prompt-cyan to-prompt-pink bg-clip-text text-transparent">
                 Browse by Tags
               </span>
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto" data-testid="tags-description">
+            <p className="text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed" data-testid="tags-description">
               Find prompts organized by categories, use cases, and AI models. 
               Discover exactly what you need for your projects.
             </p>
@@ -79,11 +79,11 @@ export default function Tags() {
           {/* Search */}
           <div className="mb-12">
             <div className="max-w-2xl mx-auto relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 h-6 w-6" />
               <input
                 type="text"
                 placeholder="Search tags..."
-                className="w-full pl-10 pr-4 py-3 bg-prompt-slate/50 border border-prompt-purple/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-prompt-purple/60"
+                className="w-full pl-12 pr-6 py-4 bg-prompt-slate/50 border border-prompt-purple/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-prompt-purple/60 text-lg"
                 data-testid="search-tags"
               />
             </div>
@@ -92,8 +92,8 @@ export default function Tags() {
           {/* Popular Tags */}
           <div className="mb-12">
             <div className="flex items-center mb-6">
-              <TrendingUp className="text-prompt-cyan mr-2 h-6 w-6" />
-              <h2 className="text-2xl font-bold">Trending Tags</h2>
+              <TrendingUp className="text-prompt-cyan mr-3 h-8 w-8" />
+              <h2 className="text-3xl font-bold">Trending Tags</h2>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
               {popularTags.map((tag) => (

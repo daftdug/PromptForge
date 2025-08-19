@@ -88,12 +88,12 @@ export default function Leaderboard() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl lg:text-6xl font-black mb-6 leading-tight" data-testid="leaderboard-title">
+            <h1 className="text-5xl lg:text-7xl font-black mb-6 leading-tight" data-testid="leaderboard-title">
               <span className="bg-gradient-to-r from-prompt-pink to-prompt-orange bg-clip-text text-transparent">
                 Community Leaderboard
               </span>
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto" data-testid="leaderboard-description">
+            <p className="text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed" data-testid="leaderboard-description">
               Celebrate the most active creators and contributors in our community.
               See who's leading in prompt creation, usage, and community engagement.
             </p>
@@ -101,68 +101,37 @@ export default function Leaderboard() {
 
           {/* Top 3 Podium */}
           <div className="mb-16">
-            <h2 className="text-2xl font-bold mb-8 text-center flex items-center justify-center">
-              <Trophy className="text-yellow-400 mr-2 h-6 w-6" />
+            <h2 className="text-3xl font-bold mb-8 text-center flex items-center justify-center">
+              <Trophy className="text-yellow-400 mr-3 h-8 w-8" />
               Top Creators
             </h2>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-3 gap-8">
               {topCreators.map((creator, index) => (
                 <div
                   key={creator.rank}
-                  className={`relative bg-card-gradient rounded-2xl p-6 border transition-all duration-300 hover:transform hover:scale-105 ${
-                    creator.rank === 1 
-                      ? 'border-yellow-400/50 shadow-xl shadow-yellow-400/20'
-                      : creator.rank === 2
-                      ? 'border-gray-400/50 shadow-xl shadow-gray-400/20'
-                      : 'border-amber-600/50 shadow-xl shadow-amber-600/20'
-                  }`}
+                  className="bg-card-gradient rounded-xl p-6 border border-prompt-purple/20 hover:border-prompt-purple/40 transition-all duration-300"
                   data-testid={`top-creator-${creator.rank}`}
                 >
-                  {/* Rank Badge */}
-                  <div className={`absolute -top-3 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-gradient-to-r ${creator.color} rounded-full flex items-center justify-center text-white font-bold text-sm`}>
-                    {creator.rank === 1 ? <Crown className="h-4 w-4" /> : creator.rank}
-                  </div>
-
-                  {/* User Info */}
-                  <div className="text-center mb-4 mt-2">
-                    <h3 className="text-xl font-bold text-white mb-2 flex items-center justify-center">
-                      <span className={`w-6 h-6 bg-gradient-to-r ${creator.color} flex items-center justify-center text-white font-bold text-sm mr-2`}>
-                        {creator.avatar}
-                      </span>
-                      {creator.name}
-                    </h3>
-                    <span className={`text-sm px-2 py-1 bg-gradient-to-r ${creator.color} text-white rounded-full`}>
-                      {creator.badge}
+                  {/* Simple rank and name */}
+                  <div className="flex items-center mb-4">
+                    <span className="text-3xl font-black mr-3 text-prompt-orange">
+                      #{creator.rank}
                     </span>
+                    <div>
+                      <h3 className="text-xl font-bold text-white flex items-center">
+                        <span className="w-6 h-6 bg-prompt-purple rounded-full flex items-center justify-center text-white font-bold text-sm mr-2">
+                          {creator.avatar}
+                        </span>
+                        {creator.name}
+                      </h3>
+                      <p className="text-gray-400 text-sm">{creator.badge}</p>
+                    </div>
                   </div>
 
-                  {/* Stats */}
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-300 flex items-center">
-                        <Zap className="h-4 w-4 mr-1" />
-                        Prompts
-                      </span>
-                      <span className="font-bold">{creator.prompts}</span>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-300 flex items-center">
-                        <Star className="h-4 w-4 mr-1" />
-                        Likes
-                      </span>
-                      <span className="font-bold">{creator.likes.toLocaleString()}</span>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-300 flex items-center">
-                        <TrendingUp className="h-4 w-4 mr-1" />
-                        Downloads
-                      </span>
-                      <span className="font-bold">{creator.downloads.toLocaleString()}</span>
-                    </div>
-                    <div className="flex items-center justify-between border-t border-prompt-slate/20 pt-3">
-                      <span className="text-gray-300">Streak</span>
-                      <span className="font-bold text-prompt-orange">{creator.streak} days 🔥</span>
-                    </div>
+                  {/* Simple stats */}
+                  <div className="text-gray-300 text-lg">
+                    <p><span className="font-bold text-white">{creator.prompts}</span> prompts</p>
+                    <p><span className="font-bold text-white">{creator.likes.toLocaleString()}</span> likes</p>
                   </div>
                 </div>
               ))}
@@ -212,28 +181,27 @@ export default function Leaderboard() {
 
           {/* Full Leaderboard */}
           <div className="mb-12">
-            <h2 className="text-2xl font-bold mb-6">Full Rankings</h2>
-            <div className="bg-card-gradient rounded-2xl p-6 border border-prompt-purple/20">
-              <div className="space-y-4">
+            <h2 className="text-3xl font-bold mb-6">Full Rankings</h2>
+            <div className="bg-card-gradient rounded-xl p-6 border border-prompt-purple/20">
+              <div className="space-y-3">
                 {allContributors.map((contributor) => (
                   <div
                     key={contributor.rank}
-                    className="flex items-center justify-between py-3 border-b border-prompt-slate/20 last:border-b-0"
+                    className="flex items-center justify-between py-4 border-b border-prompt-slate/20 last:border-b-0"
                     data-testid={`contributor-${contributor.rank}`}
                   >
                     <div className="flex items-center">
-                      <span className="text-gray-400 font-bold text-lg mr-4 w-6">
+                      <span className="text-prompt-orange font-bold text-xl mr-4">
                         #{contributor.rank}
                       </span>
-                      <div className="w-10 h-10 bg-prompt-purple/20 rounded-full flex items-center justify-center text-prompt-purple font-bold mr-4">
+                      <span className="w-6 h-6 bg-prompt-purple rounded-full flex items-center justify-center text-white font-bold text-sm mr-3">
                         {contributor.name.split(' ').map(n => n[0]).join('')}
-                      </div>
-                      <span className="font-semibold">{contributor.name}</span>
+                      </span>
+                      <span className="font-semibold text-lg">{contributor.name}</span>
                     </div>
-                    <div className="flex items-center space-x-6 text-sm text-gray-400">
-                      <span>{contributor.prompts} prompts</span>
-                      <span>{contributor.likes.toLocaleString()} likes</span>
-                      <span>{contributor.downloads.toLocaleString()} downloads</span>
+                    <div className="flex items-center space-x-6 text-gray-400">
+                      <span className="text-base">{contributor.prompts} prompts</span>
+                      <span className="text-base">{contributor.likes.toLocaleString()} likes</span>
                     </div>
                   </div>
                 ))}
