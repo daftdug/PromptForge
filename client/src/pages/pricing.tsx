@@ -1,9 +1,13 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import { Switch } from "@/components/ui/switch";
 import { Check, X, Star, Zap, Crown, Sparkles } from "lucide-react";
+import { useState } from "react";
 
 export default function Pricing() {
+  const [isAnnual, setIsAnnual] = useState(false);
+  
   const plans = [
     {
       name: "Free",
@@ -28,8 +32,9 @@ export default function Pricing() {
     },
     {
       name: "Pro",
-      price: "$9.99",
-      period: "per month",
+      price: isAnnual ? "$99" : "$9.99",
+      period: isAnnual ? "per year" : "per month",
+      originalPrice: isAnnual ? "$119.88" : null,
       description: "For professionals and creators",
       features: [
         "Everything in Free",
@@ -81,14 +86,35 @@ export default function Pricing() {
                 Simple Pricing
               </span>
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto" data-testid="pricing-description">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8" data-testid="pricing-description">
               Choose the perfect plan for your AI prompting needs. 
               Start free and upgrade as you grow.
             </p>
+            
+            {/* Monthly/Annual Toggle */}
+            <div className="flex items-center justify-center gap-4 mb-8">
+              <span className={`text-lg font-medium ${!isAnnual ? 'text-white' : 'text-gray-400'}`}>
+                Monthly
+              </span>
+              <Switch
+                checked={isAnnual}
+                onCheckedChange={setIsAnnual}
+                className="data-[state=checked]:bg-prompt-purple"
+                data-testid="billing-toggle"
+              />
+              <span className={`text-lg font-medium ${isAnnual ? 'text-white' : 'text-gray-400'}`}>
+                Annual
+              </span>
+              {isAnnual && (
+                <span className="text-sm bg-green-500/20 text-green-400 px-2 py-1 rounded-full font-medium">
+                  Save 17%
+                </span>
+              )}
+            </div>
           </div>
 
           {/* Pricing Plans */}
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
+          <div className="grid md:grid-cols-2 gap-12 mb-16 max-w-5xl mx-auto">
             {plans.map((plan, index) => (
               <div
                 key={plan.name}
@@ -107,12 +133,19 @@ export default function Pricing() {
                 )}
 
                 <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-prompt-cyan mb-2">{plan.name}</h3>
+                  <h3 className="text-3xl font-bold text-prompt-cyan mb-3">{plan.name}</h3>
                   <div className="mb-4">
-                    <span className="text-4xl font-black">{plan.price}</span>
-                    <span className="text-gray-400 ml-2">/ {plan.period}</span>
+                    <div className="flex items-center justify-center gap-2">
+                      <span className="text-5xl font-black">{plan.price}</span>
+                      <span className="text-gray-400 text-xl">/ {plan.period}</span>
+                    </div>
+                    {plan.originalPrice && (
+                      <div className="text-gray-500 line-through text-sm mt-1">
+                        {plan.originalPrice} / year
+                      </div>
+                    )}
                   </div>
-                  <p className="text-gray-300">{plan.description}</p>
+                  <p className="text-gray-300 text-lg">{plan.description}</p>
                 </div>
 
                 {/* Features */}
