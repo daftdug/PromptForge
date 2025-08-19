@@ -202,15 +202,15 @@ export default function Courses() {
                       </div>
                     </div>
 
-                    <h3 className="text-2xl lg:text-3xl font-bold mb-4 text-white">{course.title}</h3>
-                    <p className="text-gray-300 text-lg mb-6 leading-relaxed">{course.description}</p>
+                    <h3 className="text-3xl lg:text-4xl font-bold mb-6 text-white">{course.title}</h3>
+                    <p className="text-gray-300 text-xl mb-8 leading-relaxed">{course.description}</p>
 
                     <div className="mb-6">
-                      <p className="text-prompt-cyan font-semibold text-lg mb-4">What you'll learn:</p>
-                      <div className="grid grid-cols-1 gap-3">
+                      <p className="text-prompt-cyan font-semibold text-xl mb-5">What you'll learn:</p>
+                      <div className="grid grid-cols-1 gap-4">
                         {course.modules.slice(0, 3).map((module, idx) => (
-                          <div key={idx} className="flex items-center text-gray-300 text-lg">
-                            <CheckCircle className="h-5 w-5 text-prompt-cyan mr-3 flex-shrink-0" />
+                          <div key={idx} className="flex items-center text-gray-300 text-xl">
+                            <CheckCircle className="h-6 w-6 text-prompt-cyan mr-4 flex-shrink-0" />
                             {module}
                           </div>
                         ))}

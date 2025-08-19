@@ -102,16 +102,16 @@ export default function Tags() {
                   className={`bg-card-gradient rounded-xl p-4 border border-${tag.color}/20 hover:border-${tag.color}/40 transition-all duration-300 cursor-pointer hover:transform hover:scale-105`}
                   data-testid={`popular-tag-${tag.name}`}
                 >
-                  <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center">
-                      <Hash className={`text-${tag.color} h-4 w-4 mr-1`} />
-                      <span className="font-semibold">{tag.name}</span>
+                      <Hash className={`text-${tag.color} h-5 w-5 mr-2`} />
+                      <span className="font-semibold text-lg">{tag.name}</span>
                     </div>
                     {tag.trending && (
-                      <TrendingUp className="text-prompt-cyan h-4 w-4" />
+                      <TrendingUp className="text-prompt-cyan h-5 w-5" />
                     )}
                   </div>
-                  <p className="text-gray-400 text-sm">{tag.count} prompts</p>
+                  <p className="text-gray-400 text-base">{tag.count} prompts</p>
                 </div>
               ))}
             </div>
@@ -119,7 +119,7 @@ export default function Tags() {
 
           {/* Categories */}
           <div className="mb-12">
-            <h2 className="text-3xl font-bold mb-8">Browse by Category</h2>
+            <h2 className="text-4xl font-bold mb-10">Browse by Category</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {categories.map((category) => (
                 <div
@@ -127,14 +127,14 @@ export default function Tags() {
                   className={`bg-card-gradient rounded-xl p-6 border border-${category.color}/20 hover:border-${category.color}/40 transition-all duration-300`}
                   data-testid={`category-${category.title.toLowerCase().replace(' ', '-')}`}
                 >
-                  <h3 className={`text-${category.color} font-bold text-xl mb-4`}>
+                  <h3 className={`text-${category.color} font-bold text-2xl mb-5`}>
                     {category.title}
                   </h3>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-3">
                     {category.tags.map((tag) => (
                       <button
                         key={tag}
-                        className={`text-sm px-3 py-2 bg-${category.color}/10 text-gray-300 hover:text-white hover:bg-${category.color}/20 rounded transition-colors duration-200`}
+                        className={`text-lg px-4 py-3 bg-${category.color}/10 text-gray-300 hover:text-white hover:bg-${category.color}/20 rounded transition-colors duration-200`}
                         onClick={() => window.open('https://promptmagic.dev', '_blank')}
                         data-testid={`tag-${tag}`}
                       >
