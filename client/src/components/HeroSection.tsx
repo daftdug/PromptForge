@@ -1,6 +1,7 @@
 import { useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Rocket } from "lucide-react";
+import { Rocket, Play } from "lucide-react";
+import demoVideo from "@assets/5977124-uhd_3840_2160_25fps_1755619421750.mp4";
 
 export default function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -57,7 +58,7 @@ export default function HeroSection() {
           
           {/* Right Content - Demo Video */}
           <div className="relative">
-            <div className="relative w-full h-96 lg:h-[500px] rounded-3xl overflow-hidden border border-prompt-purple/20" data-testid="hero-demo-video">
+            <div className="relative w-full h-96 lg:h-[500px] rounded-3xl overflow-hidden border border-prompt-purple/20 bg-card-gradient" data-testid="hero-demo-video">
               <video
                 ref={videoRef}
                 autoPlay
@@ -65,16 +66,36 @@ export default function HeroSection() {
                 loop
                 playsInline
                 className="w-full h-full object-cover"
+                poster=""
+                onError={(e) => {
+                  console.log('Video error:', e);
+                  // Hide video element on error
+                  if (videoRef.current) {
+                    videoRef.current.style.display = 'none';
+                  }
+                }}
               >
-                <source src="/attached_assets/5977124-uhd_3840_2160_25fps_1755619421750.mp4" type="video/mp4" />
+                <source src={demoVideo} type="video/mp4" />
                 <source src="/attached_assets/4146195-uhd_3840_2160_25fps_1755619470462.mp4" type="video/mp4" />
                 <source src="/attached_assets/2516159-hd_1920_1080_24fps_1755619470465.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
               </video>
+              
+              {/* Fallback content when video doesn't load */}
+              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-prompt-purple/10 to-prompt-accent/10">
+                <div className="text-center">
+                  <div className="w-20 h-20 bg-prompt-purple/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Play className="h-10 w-10 text-prompt-purple" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-2 text-white">Prompt Magic Demo</h3>
+                  <p className="text-gray-300">See how easy it is to discover, copy, and use AI prompts</p>
+                </div>
+              </div>
               
               {/* Subtle overlay for branding */}
               <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-prompt-purple/20 pointer-events-none"></div>
               
-              {/* Optional play indicator */}
+              {/* Live Demo indicator */}
               <div className="absolute bottom-4 right-4 bg-prompt-purple/80 backdrop-blur-sm rounded-full px-3 py-1 text-white text-sm">
                 Live Demo
               </div>
