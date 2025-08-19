@@ -83,6 +83,18 @@ export default function HeroSection() {
               
               {/* Dynamic overlay for visual interest */}
               <div className="absolute inset-0 bg-gradient-to-br from-prompt-purple/35 via-prompt-cyan/25 to-prompt-pink/40 pointer-events-none"></div>
+              
+              {/* Demo button overlay - centered */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <Button
+                  onClick={handleStartFree}
+                  className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white border border-white/30 px-6 py-3 rounded-xl font-semibold text-base transition-all duration-300 transform hover:scale-105"
+                  data-testid="demo-overlay-button"
+                >
+                  <Play className="mr-2 h-5 w-5" />
+                  Watch Demo
+                </Button>
+              </div>
             </div>
           </div>
         </div>
