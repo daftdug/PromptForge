@@ -119,7 +119,7 @@ export default function Tags() {
 
           {/* Categories */}
           <div className="mb-12">
-            <h2 className="text-2xl font-bold mb-6">Browse by Category</h2>
+            <h2 className="text-3xl font-bold mb-8">Browse by Category</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {categories.map((category) => (
                 <div
@@ -127,14 +127,14 @@ export default function Tags() {
                   className={`bg-card-gradient rounded-xl p-6 border border-${category.color}/20 hover:border-${category.color}/40 transition-all duration-300`}
                   data-testid={`category-${category.title.toLowerCase().replace(' ', '-')}`}
                 >
-                  <h3 className={`text-${category.color} font-bold text-lg mb-4`}>
+                  <h3 className={`text-${category.color} font-bold text-xl mb-4`}>
                     {category.title}
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {category.tags.map((tag) => (
                       <button
                         key={tag}
-                        className={`text-xs px-2 py-1 bg-${category.color}/10 text-gray-300 hover:text-white hover:bg-${category.color}/20 rounded transition-colors duration-200`}
+                        className={`text-sm px-3 py-2 bg-${category.color}/10 text-gray-300 hover:text-white hover:bg-${category.color}/20 rounded transition-colors duration-200`}
                         onClick={() => window.open('https://promptmagic.dev', '_blank')}
                         data-testid={`tag-${tag}`}
                       >
@@ -149,13 +149,13 @@ export default function Tags() {
 
           {/* All Tags Cloud */}
           <div className="mb-12">
-            <h2 className="text-2xl font-bold mb-6">All Tags</h2>
+            <h2 className="text-3xl font-bold mb-8">All Tags</h2>
             <div className="bg-card-gradient rounded-xl p-6 border border-prompt-purple/20">
               <div className="flex flex-wrap gap-2">
                 {allTags.map((tag, index) => (
                   <button
                     key={tag}
-                    className={`text-sm px-3 py-1 bg-prompt-slate/30 text-gray-300 hover:text-white hover:bg-prompt-purple/20 rounded-full transition-all duration-200 transform hover:scale-105`}
+                    className={`text-base px-4 py-2 bg-prompt-slate/30 text-gray-300 hover:text-white hover:bg-prompt-purple/20 rounded-full transition-all duration-200 transform hover:scale-105`}
                     style={{
                       fontSize: `${0.75 + (Math.random() * 0.5)}rem`,
                       opacity: 0.7 + (Math.random() * 0.3)
