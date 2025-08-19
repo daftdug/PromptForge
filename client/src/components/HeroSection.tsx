@@ -88,10 +88,10 @@ export default function HeroSection() {
               <div className="absolute inset-0 flex items-center justify-center">
                 <Button
                   onClick={handleStartFree}
-                  className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white border border-white/30 px-6 py-3 rounded-xl font-semibold text-base transition-all duration-300 transform hover:scale-105"
+                  className="bg-black/50 backdrop-blur-md hover:bg-black/70 text-white border-2 border-white/60 hover:border-white px-8 py-4 rounded-2xl font-bold text-lg shadow-2xl transition-all duration-300 transform hover:scale-110"
                   data-testid="demo-overlay-button"
                 >
-                  <Play className="mr-2 h-5 w-5" />
+                  <Play className="mr-3 h-6 w-6 fill-white" />
                   Watch Demo
                 </Button>
               </div>
