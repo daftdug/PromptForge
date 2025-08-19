@@ -242,7 +242,7 @@ export default function Pricing() {
                 Frequently Asked Questions
               </span>
             </h2>
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-5xl mx-auto">
               <div className="grid md:grid-cols-2 gap-8">
                 {faqs.map((faq, index) => (
                   <div
