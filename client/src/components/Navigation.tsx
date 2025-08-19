@@ -24,10 +24,10 @@ export default function Navigation() {
             <img 
               src={logoImage} 
               alt="Prompt Magic Logo" 
-              className="w-10 h-10"
+              className="w-12 h-12"
               style={{ filter: 'brightness(0) saturate(100%) invert(85%) sepia(100%) saturate(300%) hue-rotate(10deg) brightness(1.1)' }}
             />
-            <span className="text-2xl font-bold tracking-tight">Prompt Magic</span>
+            <span className="text-3xl font-black tracking-tight">Prompt Magic</span>
           </Link>
           
           {/* Desktop Navigation Links */}
@@ -36,7 +36,7 @@ export default function Navigation() {
               <Link 
                 key={link.label}
                 href={link.href}
-                className="text-gray-300 hover:text-white transition-colors text-lg font-medium"
+                className="text-gray-300 hover:text-white transition-colors text-xl font-semibold"
                 data-testid={`nav-link-${link.label.toLowerCase().replace(/\s+/g, '-')}`}
               >
                 {link.label}
@@ -69,7 +69,7 @@ export default function Navigation() {
                 <Link 
                   key={link.label}
                   href={link.href}
-                  className="text-gray-300 hover:text-white transition-colors px-2 py-1 text-lg font-medium"
+                  className="text-gray-300 hover:text-white transition-colors px-2 py-1 text-xl font-semibold"
                   onClick={() => setMobileMenuOpen(false)}
                   data-testid={`mobile-nav-link-${link.label.toLowerCase().replace(/\s+/g, '-')}`}
                 >

@@ -44,6 +44,8 @@ Enhanced the landing page with professional visual assets and interactive elemen
 ✓ Enhanced "Start Exploring" button with purple outer glow effect and made "No login required" text lighter gray
 ✓ Updated logo to use custom yellow-filtered brand image without background container
 ✓ Comprehensively fixed header sizing with h-24 height, enhanced logo (w-12 h-12), stronger brand text (text-3xl font-black), and larger navigation links (text-xl font-semibold) with consistent pt-28 spacing across all pages
+✓ Enhanced global font consistency by applying NTR font stack universally across all components and pages
+✓ Updated leaderboard to display user icons inline next to usernames instead of large circular containers
 
 # User Preferences
 
