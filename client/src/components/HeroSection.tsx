@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Rocket, Play, Brain } from "lucide-react";
+import heroImage from "@assets/pexels-tima-miroshnichenko-6322806_1755619490415.jpg";
 
 export default function HeroSection() {
   const handleStartFree = () => {
@@ -62,28 +63,39 @@ export default function HeroSection() {
           
           {/* Right Content - Visual */}
           <div className="relative">
-            <div className="relative w-full h-96 lg:h-[500px] bg-card-gradient rounded-3xl p-8 border border-prompt-purple/20" data-testid="hero-visual">
-              <div className="absolute top-6 right-6 text-prompt-cyan">
-                <Brain className="h-10 w-10" />
+            <div className="relative w-full h-96 lg:h-[500px] rounded-3xl overflow-hidden border border-prompt-purple/20" data-testid="hero-visual">
+              {/* Hero Background Image */}
+              <div className="absolute inset-0">
+                <img 
+                  src={heroImage} 
+                  alt="Professional typing on laptop" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-prompt-purple/80 via-prompt-dark/70 to-prompt-cyan/60"></div>
               </div>
-              <div className="text-center h-full flex flex-col justify-center">
+              
+              {/* Content Overlay */}
+              <div className="relative z-10 h-full flex flex-col justify-center items-center text-center p-8">
+                <div className="absolute top-6 right-6 text-prompt-cyan">
+                  <Brain className="h-10 w-10" />
+                </div>
                 <div className="text-6xl font-black mb-4">
-                  <span className="bg-gradient-to-r from-prompt-purple to-prompt-cyan bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-white to-prompt-cyan bg-clip-text text-transparent drop-shadow-lg">
                     Prompt
                   </span>
                 </div>
                 <div className="text-4xl font-bold mb-6">
-                  <span className="bg-gradient-to-r from-prompt-cyan to-prompt-pink bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-prompt-cyan to-prompt-pink bg-clip-text text-transparent drop-shadow-lg">
                     Magic
                   </span>
                 </div>
-                <p className="text-gray-300 text-lg">Your AI Command Center</p>
+                <p className="text-white text-lg font-semibold drop-shadow-md">Your AI Command Center</p>
               </div>
               
               {/* Floating elements */}
-              <div className="absolute top-20 left-4 w-12 h-12 bg-prompt-purple/30 rounded-full animate-pulse"></div>
-              <div className="absolute bottom-20 right-8 w-8 h-8 bg-prompt-cyan/30 rounded-full animate-pulse" style={{ animationDelay: '0.7s' }}></div>
-              <div className="absolute top-1/2 left-0 w-6 h-6 bg-prompt-pink/30 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+              <div className="absolute top-20 left-4 w-12 h-12 bg-white/20 rounded-full animate-pulse backdrop-blur-sm"></div>
+              <div className="absolute bottom-20 right-8 w-8 h-8 bg-prompt-cyan/40 rounded-full animate-pulse backdrop-blur-sm" style={{ animationDelay: '0.7s' }}></div>
+              <div className="absolute top-1/2 left-0 w-6 h-6 bg-prompt-pink/40 rounded-full animate-pulse backdrop-blur-sm" style={{ animationDelay: '1s' }}></div>
             </div>
           </div>
         </div>

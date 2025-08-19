@@ -1,3 +1,5 @@
+import AnimatedCounter from "@/components/AnimatedCounter";
+
 export default function SocialProofSection() {
   const statistics = [
     { value: "50K+", label: "Prompts Shared", color: "text-prompt-cyan" },
@@ -17,9 +19,12 @@ export default function SocialProofSection() {
         <div className="grid md:grid-cols-3 gap-8">
           {statistics.map((stat, index) => (
             <div key={stat.label} className="text-center" data-testid={`stat-${stat.label.toLowerCase().replace(/\s+/g, '-')}`}>
-              <div className={`text-5xl font-black ${stat.color} mb-2`} data-testid={`stat-value-${index}`}>
-                {stat.value}
-              </div>
+              <AnimatedCounter
+                targetValue={stat.value}
+                className={`text-5xl font-black ${stat.color} mb-2`}
+                testId={`stat-value-${index}`}
+                duration={2500 + index * 200}
+              />
               <p className="text-gray-300 text-lg" data-testid={`stat-label-${index}`}>
                 {stat.label}
               </p>
