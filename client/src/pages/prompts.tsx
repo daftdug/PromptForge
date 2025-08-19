@@ -1,229 +1,243 @@
-import { useState } from "react";
-import { Search, Filter, Heart, Copy, ExternalLink, Star, Zap } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import { Button } from "@/components/ui/button";
+import { Search, Filter, Heart, Share2, Bookmark, Star, TrendingUp, Clock } from "lucide-react";
 
-export default function PromptsPage() {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("all");
-
-  const categories = [
-    "all", "writing", "coding", "marketing", "analysis", "creative", "business"
-  ];
-
-  const prompts = [
+export default function Prompts() {
+  const featuredPrompts = [
     {
       id: 1,
-      title: "Content Marketing Strategy Generator",
-      description: "Create comprehensive marketing strategies for any product or service with detailed action plans.",
-      category: "marketing",
+      title: "Marketing Copy Generator",
+      description: "Create compelling marketing copy for any product or service with this comprehensive prompt template.",
+      category: "Marketing",
       author: "Sarah Chen",
-      likes: 247,
-      copies: 1520,
+      likes: 234,
+      uses: 1200,
       rating: 4.8,
-      aiTools: ["ChatGPT", "Claude"],
-      preview: "Act as a senior marketing strategist. Analyze the target market for [PRODUCT] and create a comprehensive..."
+      tags: ["marketing", "copywriting", "sales"],
+      premium: false
     },
     {
       id: 2,
       title: "Code Review Assistant",
-      description: "Get detailed code reviews with suggestions for improvements, best practices, and bug detection.",
-      category: "coding",
-      author: "DevMaster",
+      description: "Get detailed code reviews and improvement suggestions for any programming language.",
+      category: "Development",
+      author: "Alex Kumar",
       likes: 189,
-      copies: 890,
+      uses: 856,
       rating: 4.9,
-      aiTools: ["ChatGPT", "Claude", "Gemini"],
-      preview: "Review the following code and provide detailed feedback on: 1. Code quality and readability..."
+      tags: ["code", "review", "development"],
+      premium: true
     },
     {
       id: 3,
-      title: "Creative Writing Prompt Generator",
-      description: "Generate unique, engaging story prompts and character development ideas for any genre.",
-      category: "creative",
-      author: "WordSmith",
+      title: "Creative Story Generator",
+      description: "Generate engaging stories with plot twists, character development, and rich descriptions.",
+      category: "Creative Writing",
+      author: "Emma Rodriguez",
       likes: 312,
-      copies: 2100,
+      uses: 2100,
       rating: 4.7,
-      aiTools: ["ChatGPT", "Claude"],
-      preview: "Create an original story prompt that includes: A compelling protagonist with a clear motivation..."
+      tags: ["creative", "writing", "storytelling"],
+      premium: false
+    },
+    {
+      id: 4,
+      title: "Business Strategy Analyzer",
+      description: "Analyze business strategies, identify opportunities, and create actionable recommendations.",
+      category: "Business",
+      author: "Michael Thompson",
+      likes: 156,
+      uses: 678,
+      rating: 4.6,
+      tags: ["business", "strategy", "analysis"],
+      premium: true
+    },
+    {
+      id: 5,
+      title: "Learning Path Creator",
+      description: "Design personalized learning paths for any subject with structured milestones and resources.",
+      category: "Education",
+      author: "Lisa Park",
+      likes: 278,
+      uses: 1450,
+      rating: 4.9,
+      tags: ["education", "learning", "curriculum"],
+      premium: false
+    },
+    {
+      id: 6,
+      title: "Social Media Content Planner",
+      description: "Plan and create engaging social media content across multiple platforms with this template.",
+      category: "Social Media",
+      author: "David Wilson",
+      likes: 201,
+      uses: 980,
+      rating: 4.5,
+      tags: ["social media", "content", "planning"],
+      premium: false
     }
   ];
 
-  const filteredPrompts = prompts.filter(prompt => {
-    const matchesSearch = prompt.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         prompt.description.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesCategory = selectedCategory === "all" || prompt.category === selectedCategory;
-    return matchesSearch && matchesCategory;
-  });
-
-  const handleCopyPrompt = (prompt: any) => {
-    navigator.clipboard.writeText(prompt.preview);
-    console.log(`Copied prompt: ${prompt.title}`);
-  };
-
-  const handleLaunchPrompt = (prompt: any) => {
-    window.open('https://chat.openai.com/', '_blank');
-  };
+  const categories = ["All", "Marketing", "Development", "Creative Writing", "Business", "Education", "Social Media"];
 
   return (
-    <div className="min-h-screen bg-prompt-dark text-white" data-testid="prompts-page">
+    <div className="min-h-screen bg-prompt-dark text-white font-sans overflow-x-hidden" data-testid="prompts-page">
       <Navigation />
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl lg:text-5xl font-black mb-6" data-testid="prompts-title">
-            Discover{" "}
-            <span className="bg-gradient-to-r from-prompt-purple to-prompt-cyan bg-clip-text text-transparent">
-              Perfect Prompts
-            </span>
-          </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto" data-testid="prompts-description">
-            Browse our collection of battle-tested prompts created by the community. 
-            Copy, customize, and launch directly in your favorite AI tool.
-          </p>
-        </div>
-
-        {/* Search and Filters */}
-        <div className="mb-8 space-y-4">
-          <div className="relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
-            <Input
-              placeholder="Search prompts..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10 bg-prompt-slate border-prompt-purple/20 text-white placeholder-gray-400"
-              data-testid="search-input"
-            />
+      <div className="pt-20 pb-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Header */}
+          <div className="text-center mb-12">
+            <h1 className="text-4xl lg:text-6xl font-black mb-6 leading-tight" data-testid="prompts-title">
+              <span className="bg-gradient-to-r from-prompt-purple to-prompt-cyan bg-clip-text text-transparent">
+                Browse Prompts
+              </span>
+            </h1>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto" data-testid="prompts-description">
+              Discover thousands of high-quality prompts created by our community. 
+              Find the perfect prompt for your next AI interaction.
+            </p>
           </div>
-          
-          <div className="flex flex-wrap gap-3">
-            {categories.map((category) => (
+
+          {/* Search and Filters */}
+          <div className="mb-8">
+            <div className="flex flex-col md:flex-row gap-4 mb-6">
+              <div className="flex-1 relative">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+                <input
+                  type="text"
+                  placeholder="Search prompts..."
+                  className="w-full pl-10 pr-4 py-3 bg-prompt-slate/50 border border-prompt-purple/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-prompt-purple/60"
+                  data-testid="search-input"
+                />
+              </div>
               <Button
-                key={category}
-                variant={selectedCategory === category ? "default" : "outline"}
-                size="sm"
-                onClick={() => setSelectedCategory(category)}
-                className={`capitalize ${
-                  selectedCategory === category
-                    ? "bg-prompt-purple text-white"
-                    : "border-prompt-purple/20 text-gray-300 hover:bg-prompt-purple/10"
-                }`}
-                data-testid={`category-filter-${category}`}
+                className="bg-prompt-purple/20 border border-prompt-purple/40 text-prompt-purple hover:bg-prompt-purple hover:text-white px-6 py-3 rounded-xl"
+                data-testid="filter-button"
               >
-                {category}
+                <Filter className="mr-2 h-5 w-5" />
+                Filters
               </Button>
+            </div>
+
+            {/* Categories */}
+            <div className="flex flex-wrap gap-2">
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  className={`px-4 py-2 rounded-lg transition-all duration-200 ${
+                    category === "All"
+                      ? "bg-prompt-purple text-white"
+                      : "bg-prompt-slate/30 text-gray-300 hover:bg-prompt-purple/20 hover:text-white"
+                  }`}
+                  data-testid={`category-${category.toLowerCase().replace(' ', '-')}`}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Featured Prompts Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            {featuredPrompts.map((prompt) => (
+              <div
+                key={prompt.id}
+                className="bg-card-gradient rounded-2xl p-6 border border-prompt-purple/20 hover:border-prompt-purple/40 transition-all duration-300 hover:transform hover:scale-105"
+                data-testid={`prompt-card-${prompt.id}`}
+              >
+                {/* Header */}
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex-1">
+                    <div className="flex items-center mb-2">
+                      <span className="text-xs px-2 py-1 bg-prompt-cyan/20 text-prompt-cyan rounded-full">
+                        {prompt.category}
+                      </span>
+                      {prompt.premium && (
+                        <span className="ml-2 text-xs px-2 py-1 bg-gradient-to-r from-prompt-purple to-prompt-pink text-white rounded-full">
+                          PRO
+                        </span>
+                      )}
+                    </div>
+                    <h3 className="text-xl font-bold mb-2" data-testid={`prompt-title-${prompt.id}`}>
+                      {prompt.title}
+                    </h3>
+                  </div>
+                  <div className="flex space-x-2">
+                    <button className="text-gray-400 hover:text-prompt-purple">
+                      <Heart className="h-5 w-5" />
+                    </button>
+                    <button className="text-gray-400 hover:text-prompt-cyan">
+                      <Bookmark className="h-5 w-5" />
+                    </button>
+                  </div>
+                </div>
+
+                {/* Description */}
+                <p className="text-gray-300 text-sm mb-4 leading-relaxed" data-testid={`prompt-description-${prompt.id}`}>
+                  {prompt.description}
+                </p>
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-1 mb-4">
+                  {prompt.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-xs px-2 py-1 bg-prompt-slate/40 text-gray-300 rounded"
+                    >
+                      #{tag}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Stats */}
+                <div className="flex items-center justify-between mb-4 text-sm text-gray-400">
+                  <div className="flex items-center space-x-4">
+                    <div className="flex items-center">
+                      <Heart className="h-4 w-4 mr-1" />
+                      {prompt.likes}
+                    </div>
+                    <div className="flex items-center">
+                      <TrendingUp className="h-4 w-4 mr-1" />
+                      {prompt.uses}
+                    </div>
+                    <div className="flex items-center">
+                      <Star className="h-4 w-4 mr-1 fill-current text-yellow-400" />
+                      {prompt.rating}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Author and Action */}
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-gray-400">by {prompt.author}</span>
+                  <Button
+                    className="bg-prompt-purple hover:bg-prompt-purple/90 text-white px-4 py-2 rounded-lg text-sm"
+                    onClick={() => window.open('https://promptmagic.dev', '_blank')}
+                    data-testid={`use-prompt-${prompt.id}`}
+                  >
+                    Use Prompt
+                  </Button>
+                </div>
+              </div>
             ))}
           </div>
-        </div>
 
-        {/* Prompts Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredPrompts.map((prompt) => (
-            <div
-              key={prompt.id}
-              className="bg-card-gradient rounded-2xl p-6 border border-prompt-purple/20 hover:border-prompt-purple/40 transition-all duration-300"
-              data-testid={`prompt-card-${prompt.id}`}
+          {/* Load More */}
+          <div className="text-center">
+            <Button
+              className="bg-gradient-to-r from-prompt-purple to-prompt-cyan hover:shadow-lg hover:shadow-prompt-purple/25 text-white px-8 py-3 rounded-xl font-semibold"
+              onClick={() => window.open('https://promptmagic.dev', '_blank')}
+              data-testid="load-more-button"
             >
-              {/* Header */}
-              <div className="flex items-start justify-between mb-4">
-                <div className="flex-1">
-                  <h3 className="text-lg font-bold mb-2" data-testid={`prompt-title-${prompt.id}`}>
-                    {prompt.title}
-                  </h3>
-                  <p className="text-gray-300 text-sm mb-3" data-testid={`prompt-description-${prompt.id}`}>
-                    {prompt.description}
-                  </p>
-                </div>
-                <span className={`px-2 py-1 rounded-full text-xs font-medium bg-prompt-${
-                  prompt.category === 'marketing' ? 'purple' :
-                  prompt.category === 'coding' ? 'cyan' : 'pink'
-                }/20 text-prompt-${
-                  prompt.category === 'marketing' ? 'purple' :
-                  prompt.category === 'coding' ? 'cyan' : 'pink'
-                }`}>
-                  {prompt.category}
-                </span>
-              </div>
-
-              {/* Preview */}
-              <div className="bg-prompt-slate/30 rounded-lg p-3 mb-4">
-                <p className="text-gray-400 text-sm truncate" data-testid={`prompt-preview-${prompt.id}`}>
-                  {prompt.preview}
-                </p>
-              </div>
-
-              {/* AI Tools */}
-              <div className="flex flex-wrap gap-2 mb-4">
-                {prompt.aiTools.map((tool) => (
-                  <span
-                    key={tool}
-                    className="px-2 py-1 bg-prompt-slate/50 rounded-md text-xs text-gray-300"
-                    data-testid={`ai-tool-${tool.toLowerCase()}`}
-                  >
-                    {tool}
-                  </span>
-                ))}
-              </div>
-
-              {/* Stats */}
-              <div className="flex items-center justify-between mb-4 text-sm text-gray-400">
-                <div className="flex items-center space-x-4">
-                  <div className="flex items-center">
-                    <Heart className="h-4 w-4 mr-1" />
-                    <span data-testid={`prompt-likes-${prompt.id}`}>{prompt.likes}</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Copy className="h-4 w-4 mr-1" />
-                    <span data-testid={`prompt-copies-${prompt.id}`}>{prompt.copies}</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Star className="h-4 w-4 mr-1 fill-current text-prompt-orange" />
-                    <span data-testid={`prompt-rating-${prompt.id}`}>{prompt.rating}</span>
-                  </div>
-                </div>
-                <span className="text-xs">by {prompt.author}</span>
-              </div>
-
-              {/* Actions */}
-              <div className="flex gap-2">
-                <Button
-                  size="sm"
-                  variant="outline"
-                  onClick={() => handleCopyPrompt(prompt)}
-                  className="flex-1 border-prompt-cyan/30 text-prompt-cyan hover:bg-prompt-cyan hover:text-white"
-                  data-testid={`copy-prompt-${prompt.id}`}
-                >
-                  <Copy className="h-4 w-4 mr-2" />
-                  Copy
-                </Button>
-                <Button
-                  size="sm"
-                  onClick={() => handleLaunchPrompt(prompt)}
-                  className="flex-1 bg-cta-gradient hover:shadow-lg hover:shadow-prompt-purple/25"
-                  data-testid={`launch-prompt-${prompt.id}`}
-                >
-                  <Zap className="h-4 w-4 mr-2" />
-                  Launch
-                </Button>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Load More */}
-        <div className="text-center mt-12">
-          <Button
-            variant="outline"
-            className="border-prompt-purple text-prompt-purple hover:bg-prompt-purple hover:text-white px-8 py-3"
-            data-testid="load-more-button"
-          >
-            Load More Prompts
-          </Button>
+              Load More Prompts
+            </Button>
+          </div>
         </div>
       </div>
+      
+      <Footer />
     </div>
   );
 }

@@ -30,14 +30,14 @@ export default function HeroSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="text-center lg:text-left">
-            <h1 className="text-4xl lg:text-6xl font-black mb-6 leading-tight" data-testid="hero-title">
+            <h1 className="text-3xl lg:text-5xl font-black mb-6 leading-tight" data-testid="hero-title">
               Discover the Magic<br />
               Behind Every Great<br />
               <span className="bg-gradient-to-r from-prompt-purple to-white bg-clip-text text-transparent">
                 AI Response
               </span>
             </h1>
-            <p className="text-lg lg:text-xl text-gray-300 mb-8 leading-relaxed" data-testid="hero-description">
+            <p className="text-base lg:text-lg text-gray-300 mb-8 leading-relaxed" data-testid="hero-description">
               Join thousands of creators sharing, remixing, and perfecting prompts for{" "}
               <span className="text-white font-semibold">ChatGPT</span>,{" "}
               <span className="text-white font-semibold">Claude</span>,{" "}
