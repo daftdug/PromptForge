@@ -51,8 +51,11 @@
   --tracking-normal: 0em;
   --spacing: 0.25rem;
   
-  /* Custom Prompt Magic colors - simplified palette */
+  /* Custom Prompt Magic colors - vibrant palette */
   --prompt-purple: hsl(262, 83%, 70%);
+  --prompt-pink: hsl(328, 85%, 70%);
+  --prompt-cyan: hsl(186, 100%, 42%);
+  --prompt-orange: hsl(24, 95%, 53%);
   --prompt-dark: hsl(222, 84%, 4.9%);
   --prompt-slate: hsl(217, 19%, 27%);
   --prompt-accent: hsl(240, 100%, 85%);
@@ -110,11 +113,27 @@
   }
   
   .bg-card-gradient {
-    background: linear-gradient(135deg, hsla(262, 83%, 70%, 0.1) 0%, hsla(217, 19%, 27%, 0.2) 100%);
+    background: linear-gradient(135deg, hsla(262, 83%, 70%, 0.1) 0%, hsla(186, 100%, 42%, 0.05) 50%, hsla(217, 19%, 27%, 0.2) 100%);
+  }
+  
+  .bg-cta-gradient {
+    background: linear-gradient(135deg, hsl(262, 83%, 70%) 0%, hsl(328, 85%, 70%) 100%);
   }
   
   .text-prompt-purple {
     color: hsl(262, 83%, 70%);
+  }
+  
+  .text-prompt-pink {
+    color: hsl(328, 85%, 70%);
+  }
+  
+  .text-prompt-cyan {
+    color: hsl(186, 100%, 42%);
+  }
+  
+  .text-prompt-orange {
+    color: hsl(24, 95%, 53%);
   }
   
   .text-prompt-accent {
@@ -125,6 +144,18 @@
     border-color: hsl(262, 83%, 70%);
   }
   
+  .border-prompt-pink {
+    border-color: hsl(328, 85%, 70%);
+  }
+  
+  .border-prompt-cyan {
+    border-color: hsl(186, 100%, 42%);
+  }
+  
+  .border-prompt-orange {
+    border-color: hsl(24, 95%, 53%);
+  }
+  
   .border-prompt-accent {
     border-color: hsl(240, 100%, 85%);
   }
@@ -133,12 +164,36 @@
     background-color: hsl(262, 83%, 70%);
   }
   
+  .bg-prompt-pink {
+    background-color: hsl(328, 85%, 70%);
+  }
+  
+  .bg-prompt-cyan {
+    background-color: hsl(186, 100%, 42%);
+  }
+  
+  .bg-prompt-orange {
+    background-color: hsl(24, 95%, 53%);
+  }
+  
   .bg-prompt-accent {
     background-color: hsl(240, 100%, 85%);
   }
   
   .hover\:bg-prompt-purple:hover {
     background-color: hsl(262, 83%, 70%);
+  }
+  
+  .hover\:bg-prompt-pink:hover {
+    background-color: hsl(328, 85%, 70%);
+  }
+  
+  .hover\:bg-prompt-cyan:hover {
+    background-color: hsl(186, 100%, 42%);
+  }
+  
+  .hover\:bg-prompt-orange:hover {
+    background-color: hsl(24, 95%, 53%);
   }
   
   .hover\:bg-prompt-accent:hover {

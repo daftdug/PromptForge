@@ -7,37 +7,37 @@ export default function FeaturesShowcase() {
       icon: Zap,
       title: "Instant Access to AI Superpowers",
       description: "Browse thousands of battle-tested prompts. Copy with one click. No signup walls. No payment gates. Just pure unlimited magic at your fingertips.",
-      color: "prompt-purple"
+      color: "prompt-cyan"
     },
     {
       icon: Share2,
       title: "Share Your Genius in Seconds",
       description: "Got a prompt that's fire? Share it with the world in under 10 seconds. Our AI automatically tags and categorizes your contribution. Watch it spread.",
-      color: "prompt-accent"
+      color: "prompt-purple"
     },
     {
       icon: FolderOpen,
       title: "Create Your Own Prompt Library",
       description: "Build your arsenal of AI superpowers, scattered between docs, notes, reddit, discord channels and you just save them all here so you never lose that prompt magic.",
-      color: "prompt-purple"
+      color: "prompt-pink"
     },
     {
       icon: Edit,
       title: "Remix and Evolve",
       description: "Every prompt is a starting point. Fix the bugs down there, ask more, and contribute back to the community so our hive mind eventually converts everyone.",
-      color: "prompt-accent"
+      color: "prompt-orange"
     },
     {
       icon: PlayCircle,
       title: "Run New Prompts on LLMs with 1 Click",
       description: "Try out a prompt that intrigues you, just visit us. Click on \"launch the prompt in your ChatGPT\". Claude, Gemini, whatever's best. One click away from copy / paste madness!",
-      color: "prompt-purple"
+      color: "prompt-cyan"
     },
     {
       icon: Feather,
       title: "Zero Friction",
       description: "No login to browse and access all the magical prompts. One-click prompt copying or copying. Free account to create your own prompt library to be shared. The friction you want to reduce.",
-      color: "prompt-accent"
+      color: "prompt-purple"
     }
   ];
 
@@ -47,7 +47,7 @@ export default function FeaturesShowcase() {
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-black mb-6" data-testid="features-title">
             Supercharge Your{" "}
-            <span className="bg-gradient-to-r from-prompt-purple to-prompt-accent bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-prompt-purple via-prompt-cyan to-prompt-pink bg-clip-text text-transparent">
               AI Workflows
             </span>
           </h2>

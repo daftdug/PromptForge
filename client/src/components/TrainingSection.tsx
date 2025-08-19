@@ -13,16 +13,16 @@ export default function TrainingSection() {
 
   const courseBenefits = [
     { icon: GraduationCap, text: "Expert-led video tutorials and workshops", color: "prompt-purple" },
-    { icon: Award, text: "Professional certification upon completion", color: "prompt-accent" },
-    { icon: Users, text: "Access to exclusive community of practitioners", color: "prompt-purple" },
-    { icon: Wrench, text: "Advanced prompt templates and frameworks", color: "prompt-accent" },
+    { icon: Award, text: "Professional certification upon completion", color: "prompt-cyan" },
+    { icon: Users, text: "Access to exclusive community of practitioners", color: "prompt-pink" },
+    { icon: Wrench, text: "Advanced prompt templates and frameworks", color: "prompt-orange" },
   ];
 
   const trainingModules = [
     { icon: "brain", title: "Advanced Prompting", description: "Master complex AI interactions", color: "prompt-purple" },
-    { icon: "chart-line", title: "Business Applications", description: "Real-world use cases", color: "prompt-accent" },
-    { icon: "cogs", title: "Workflow Automation", description: "Streamline your processes", color: "prompt-purple" },
-    { icon: "trophy", title: "Certification", description: "Become a verified expert", color: "prompt-accent" },
+    { icon: "chart-line", title: "Business Applications", description: "Real-world use cases", color: "prompt-cyan" },
+    { icon: "cogs", title: "Workflow Automation", description: "Streamline your processes", color: "prompt-pink" },
+    { icon: "trophy", title: "Certification", description: "Become a verified expert", color: "prompt-orange" },
   ];
 
   return (
@@ -33,7 +33,7 @@ export default function TrainingSection() {
           <div>
             <h2 className="text-4xl lg:text-5xl font-black mb-6" data-testid="training-title">
               Master AI with{" "}
-              <span className="bg-gradient-to-r from-prompt-purple to-prompt-accent bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-prompt-purple via-prompt-cyan to-prompt-pink bg-clip-text text-transparent">
                 Professional Training
               </span>
             </h2>
@@ -59,7 +59,7 @@ export default function TrainingSection() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
                 onClick={handleViewCourses}
-                className="bg-prompt-purple hover:bg-prompt-purple/90 hover:shadow-lg hover:shadow-prompt-purple/25 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105"
+                className="bg-cta-gradient hover:shadow-lg hover:shadow-prompt-purple/25 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105"
                 data-testid="button-view-courses"
               >
                 <Play className="mr-2 h-5 w-5" />
@@ -68,7 +68,7 @@ export default function TrainingSection() {
               <Button 
                 onClick={handleCourseCatalog}
                 variant="outline"
-                className="border-2 border-prompt-accent text-prompt-accent hover:bg-prompt-accent hover:text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300"
+                className="border-2 border-prompt-cyan text-prompt-cyan hover:bg-prompt-cyan hover:text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300"
                 data-testid="button-course-catalog"
               >
                 <Book className="mr-2 h-5 w-5" />
