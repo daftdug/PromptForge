@@ -21,6 +21,7 @@ Enhanced the landing page with professional visual assets and interactive elemen
 ✓ Cleaned up video container by removing overlapping text and buttons, keeping only the gradient overlay
 ✓ Reduced overall hero section height from full screen to 70vh for more compact design
 ✓ Restored demo button overlay on hero video with centered "Watch Demo" button and Play icon
+✓ Increased video container height for better visual presence (h-80 mobile, h-96 desktop)
 
 # User Preferences
 
