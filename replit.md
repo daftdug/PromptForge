@@ -25,7 +25,11 @@ Enhanced the landing page with professional visual assets and interactive elemen
 ✓ Enhanced hero gradient with vibrant blue tones for more dynamic visual appeal
 ✓ Updated hero gradient to darker, stronger 3-color diagonal: deep purple → dark cyan → deep pink (upper left to lower right)
 ✓ Added smooth animation to hero gradient with 15-second cycling movement for subtle dynamic visual appeal
-✓ Updated navigation to match promptmagic.dev structure with Prompts, Tags, Leaderboard, and Pricing links
+✓ Updated navigation to match promptmagic.dev structure with Courses (first), Prompts, Tags, Leaderboard, and Pricing links
+✓ Increased scale of header items: larger logo (w-10 h-10), bigger text (text-2xl), enhanced navigation links (text-lg font-medium)
+✓ Replaced single "Start Exploring" button with two cleverly labeled CTA buttons:
+  - "Master AI Prompts" (links to /courses) with BookOpen icon
+  - "Explore Prompts Free" (links to /prompts) with Sparkles icon
 ✓ Implemented proper routing with wouter Link components for single-page app navigation
 ✓ Created comprehensive pages mirroring actual promptmagic.dev functionality:
   - Prompts page with featured templates, search, categories, and ratings

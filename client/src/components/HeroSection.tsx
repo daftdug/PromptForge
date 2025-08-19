@@ -1,6 +1,7 @@
 import { useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Rocket, Play } from "lucide-react";
+import { Rocket, Play, BookOpen, Sparkles } from "lucide-react";
+import { Link } from "wouter";
 import demoVideo from "@assets/5977124-uhd_3840_2160_25fps_1755619421750.mp4";
 
 export default function HeroSection() {
@@ -45,16 +46,26 @@ export default function HeroSection() {
               <span className="text-gray-400 font-medium">No login required.</span>
             </p>
             
-            {/* CTA Button */}
-            <div className="flex justify-center lg:justify-start">
-              <Button 
-                onClick={handleStartFree}
-                className="bg-prompt-purple hover:bg-prompt-purple/90 hover:shadow-lg hover:shadow-prompt-purple/25 text-white px-12 py-6 rounded-xl font-semibold text-xl transition-all duration-300 transform hover:scale-105"
-                data-testid="button-start-free"
-              >
-                <Rocket className="mr-3 h-6 w-6" />
-                Start Exploring for Free
-              </Button>
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <Link href="/courses">
+                <Button 
+                  className="bg-gradient-to-r from-prompt-purple to-prompt-cyan hover:shadow-lg hover:shadow-prompt-purple/25 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105"
+                  data-testid="button-master-prompts"
+                >
+                  <BookOpen className="mr-3 h-5 w-5" />
+                  Master AI Prompts
+                </Button>
+              </Link>
+              <Link href="/prompts">
+                <Button 
+                  className="bg-gradient-to-r from-prompt-cyan to-prompt-pink hover:shadow-lg hover:shadow-prompt-cyan/25 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105"
+                  data-testid="button-explore-prompts"
+                >
+                  <Sparkles className="mr-3 h-5 w-5" />
+                  Explore Prompts Free
+                </Button>
+              </Link>
             </div>
           </div>
           

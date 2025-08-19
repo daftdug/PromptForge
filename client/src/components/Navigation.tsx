@@ -8,6 +8,7 @@ export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navigationLinks = [
+    { label: "Courses", href: "/courses" },
     { label: "Prompts", href: "/prompts" },
     { label: "Tags", href: "/tags" },
     { label: "Leaderboard", href: "/leaderboard" },
@@ -19,30 +20,30 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2 cursor-pointer" data-testid="logo">
+          <Link href="/" className="flex items-center space-x-3 cursor-pointer" data-testid="logo">
             <img 
               src={logoImage} 
               alt="Prompt Magic Logo" 
-              className="w-8 h-8"
+              className="w-10 h-10"
               style={{ filter: 'brightness(0) saturate(100%) invert(85%) sepia(100%) saturate(300%) hue-rotate(10deg) brightness(1.1)' }}
             />
-            <span className="text-xl font-bold">Prompt Magic</span>
+            <span className="text-2xl font-bold">Prompt Magic</span>
           </Link>
           
           {/* Desktop Navigation Links */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-10">
             {navigationLinks.map((link) => (
               <Link 
                 key={link.label}
                 href={link.href}
-                className="text-gray-300 hover:text-white transition-colors"
+                className="text-gray-300 hover:text-white transition-colors text-lg font-medium"
                 data-testid={`nav-link-${link.label.toLowerCase().replace(/\s+/g, '-')}`}
               >
                 {link.label}
               </Link>
             ))}
-            <div className="w-8 h-8 bg-prompt-purple rounded-full flex items-center justify-center cursor-pointer" data-testid="user-profile-button">
-              <User className="text-white h-4 w-4" />
+            <div className="w-10 h-10 bg-prompt-purple rounded-full flex items-center justify-center cursor-pointer" data-testid="user-profile-button">
+              <User className="text-white h-5 w-5" />
             </div>
           </div>
           
@@ -68,7 +69,7 @@ export default function Navigation() {
                 <Link 
                   key={link.label}
                   href={link.href}
-                  className="text-gray-300 hover:text-white transition-colors px-2 py-1"
+                  className="text-gray-300 hover:text-white transition-colors px-2 py-1 text-lg font-medium"
                   onClick={() => setMobileMenuOpen(false)}
                   data-testid={`mobile-nav-link-${link.label.toLowerCase().replace(/\s+/g, '-')}`}
                 >
