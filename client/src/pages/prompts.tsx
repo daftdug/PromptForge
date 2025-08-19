@@ -1,9 +1,40 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Search, Filter, Heart, Share2, Bookmark, Star, TrendingUp, Clock } from "lucide-react";
+import { Search, Filter, Heart, Share2, Bookmark, Star, TrendingUp, Clock, ChevronDown, Settings, Edit, Shuffle, Copy, ExternalLink } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { useState } from "react";
 
 export default function Prompts() {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  const handleUsePrompt = (action: string, promptTitle: string) => {
+    switch (action) {
+      case 'copy':
+        navigator.clipboard.writeText(`Prompt: ${promptTitle}`);
+        break;
+      case 'chatgpt':
+        window.open('https://chat.openai.com/', '_blank');
+        break;
+      case 'claude':
+        window.open('https://claude.ai/', '_blank');
+        break;
+      case 'perplexity':
+        window.open('https://www.perplexity.ai/', '_blank');
+        break;
+      case 'grok':
+        window.open('https://grok.x.ai/', '_blank');
+        break;
+      default:
+        window.open('https://promptmagic.dev', '_blank');
+    }
+  };
   const featuredPrompts = [
     {
       id: 1,
@@ -89,12 +120,12 @@ export default function Prompts() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl lg:text-6xl font-black mb-6 leading-tight" data-testid="prompts-title">
+            <h1 className="text-5xl lg:text-7xl font-black mb-6 leading-tight" data-testid="prompts-title">
               <span className="bg-gradient-to-r from-prompt-purple to-prompt-cyan bg-clip-text text-transparent">
                 Browse Prompts
               </span>
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto" data-testid="prompts-description">
+            <p className="text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed" data-testid="prompts-description">
               Discover thousands of high-quality prompts created by our community. 
               Find the perfect prompt for your next AI interaction.
             </p>
@@ -104,30 +135,31 @@ export default function Prompts() {
           <div className="mb-8">
             <div className="flex flex-col md:flex-row gap-4 mb-6">
               <div className="flex-1 relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 h-6 w-6" />
                 <input
                   type="text"
                   placeholder="Search prompts..."
-                  className="w-full pl-10 pr-4 py-3 bg-prompt-slate/50 border border-prompt-purple/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-prompt-purple/60"
+                  className="w-full pl-12 pr-6 py-4 bg-prompt-slate/50 border border-prompt-purple/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-prompt-purple/60 text-lg"
                   data-testid="search-input"
                 />
               </div>
               <Button
-                className="bg-prompt-purple/20 border border-prompt-purple/40 text-prompt-purple hover:bg-prompt-purple hover:text-white px-6 py-3 rounded-xl"
+                className="bg-prompt-purple/20 border border-prompt-purple/40 text-prompt-purple hover:bg-prompt-purple hover:text-white px-8 py-4 rounded-xl text-lg"
                 data-testid="filter-button"
               >
-                <Filter className="mr-2 h-5 w-5" />
+                <Filter className="mr-2 h-6 w-6" />
                 Filters
               </Button>
             </div>
 
             {/* Categories */}
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-3">
               {categories.map((category) => (
                 <button
                   key={category}
-                  className={`px-4 py-2 rounded-lg transition-all duration-200 ${
-                    category === "All"
+                  onClick={() => setSelectedCategory(category)}
+                  className={`px-6 py-3 rounded-lg transition-all duration-200 text-lg font-medium ${
+                    category === selectedCategory
                       ? "bg-prompt-purple text-white"
                       : "bg-prompt-slate/30 text-gray-300 hover:bg-prompt-purple/20 hover:text-white"
                   }`}
@@ -175,16 +207,16 @@ export default function Prompts() {
                 </div>
 
                 {/* Description */}
-                <p className="text-gray-300 text-sm mb-4 leading-relaxed" data-testid={`prompt-description-${prompt.id}`}>
+                <p className="text-gray-300 text-base mb-4 leading-relaxed" data-testid={`prompt-description-${prompt.id}`}>
                   {prompt.description}
                 </p>
 
                 {/* Tags */}
-                <div className="flex flex-wrap gap-1 mb-4">
+                <div className="flex flex-wrap gap-2 mb-4">
                   {prompt.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-xs px-2 py-1 bg-prompt-slate/40 text-gray-300 rounded"
+                      className="text-sm px-3 py-1 bg-prompt-slate/40 text-gray-300 rounded font-medium"
                     >
                       #{tag}
                     </span>
@@ -192,18 +224,18 @@ export default function Prompts() {
                 </div>
 
                 {/* Stats */}
-                <div className="flex items-center justify-between mb-4 text-sm text-gray-400">
-                  <div className="flex items-center space-x-4">
+                <div className="flex items-center justify-between mb-4 text-base text-gray-400">
+                  <div className="flex items-center space-x-6">
                     <div className="flex items-center">
-                      <Heart className="h-4 w-4 mr-1" />
+                      <Heart className="h-5 w-5 mr-2" />
                       {prompt.likes}
                     </div>
                     <div className="flex items-center">
-                      <TrendingUp className="h-4 w-4 mr-1" />
+                      <TrendingUp className="h-5 w-5 mr-2" />
                       {prompt.uses}
                     </div>
                     <div className="flex items-center">
-                      <Star className="h-4 w-4 mr-1 fill-current text-yellow-400" />
+                      <Star className="h-5 w-5 mr-2 fill-current text-yellow-400" />
                       {prompt.rating}
                     </div>
                   </div>
@@ -211,14 +243,78 @@ export default function Prompts() {
 
                 {/* Author and Action */}
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-400">by {prompt.author}</span>
-                  <Button
-                    className="bg-prompt-purple hover:bg-prompt-purple/90 text-white px-4 py-2 rounded-lg text-sm"
-                    onClick={() => window.open('https://promptmagic.dev', '_blank')}
-                    data-testid={`use-prompt-${prompt.id}`}
-                  >
-                    Use Prompt
-                  </Button>
+                  <span className="text-base text-gray-400">by {prompt.author}</span>
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <Button
+                        className="bg-prompt-purple hover:bg-prompt-purple/90 text-white px-6 py-3 rounded-lg text-base font-medium"
+                        data-testid={`use-prompt-${prompt.id}`}
+                      >
+                        Use Prompt
+                        <ChevronDown className="ml-2 h-4 w-4" />
+                      </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent className="w-56 bg-prompt-dark border border-prompt-purple/20" align="end">
+                      <DropdownMenuItem 
+                        className="text-white hover:bg-prompt-purple/20 cursor-pointer"
+                        onClick={() => handleUsePrompt('remix', prompt.title)}
+                      >
+                        <Shuffle className="mr-2 h-4 w-4" />
+                        Remix
+                      </DropdownMenuItem>
+                      <DropdownMenuSeparator className="bg-prompt-purple/20" />
+                      <DropdownMenuItem 
+                        className="text-white hover:bg-prompt-purple/20 cursor-pointer"
+                        onClick={() => handleUsePrompt('copy', prompt.title)}
+                      >
+                        <Copy className="mr-2 h-4 w-4" />
+                        Copy Prompt
+                      </DropdownMenuItem>
+                      <DropdownMenuItem 
+                        className="text-white hover:bg-prompt-purple/20 cursor-pointer"
+                        onClick={() => handleUsePrompt('edit', prompt.title)}
+                      >
+                        <Edit className="mr-2 h-4 w-4" />
+                        Edit Prompt
+                      </DropdownMenuItem>
+                      <DropdownMenuItem 
+                        className="text-white hover:bg-prompt-purple/20 cursor-pointer"
+                        onClick={() => handleUsePrompt('settings', prompt.title)}
+                      >
+                        <Settings className="mr-2 h-4 w-4" />
+                        Variable Settings
+                      </DropdownMenuItem>
+                      <DropdownMenuSeparator className="bg-prompt-purple/20" />
+                      <DropdownMenuItem 
+                        className="text-white hover:bg-prompt-purple/20 cursor-pointer"
+                        onClick={() => handleUsePrompt('chatgpt', prompt.title)}
+                      >
+                        <ExternalLink className="mr-2 h-4 w-4" />
+                        Open in ChatGPT
+                      </DropdownMenuItem>
+                      <DropdownMenuItem 
+                        className="text-white hover:bg-prompt-purple/20 cursor-pointer"
+                        onClick={() => handleUsePrompt('claude', prompt.title)}
+                      >
+                        <ExternalLink className="mr-2 h-4 w-4" />
+                        Open in Claude
+                      </DropdownMenuItem>
+                      <DropdownMenuItem 
+                        className="text-white hover:bg-prompt-purple/20 cursor-pointer"
+                        onClick={() => handleUsePrompt('perplexity', prompt.title)}
+                      >
+                        <ExternalLink className="mr-2 h-4 w-4" />
+                        Open in Perplexity
+                      </DropdownMenuItem>
+                      <DropdownMenuItem 
+                        className="text-white hover:bg-prompt-purple/20 cursor-pointer"
+                        onClick={() => handleUsePrompt('grok', prompt.title)}
+                      >
+                        <ExternalLink className="mr-2 h-4 w-4" />
+                        Open in Grok
+                      </DropdownMenuItem>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
                 </div>
               </div>
             ))}

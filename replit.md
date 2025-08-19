@@ -46,6 +46,9 @@ Enhanced the landing page with professional visual assets and interactive elemen
 ✓ Comprehensively fixed header sizing with h-24 height, enhanced logo (w-12 h-12), stronger brand text (text-3xl font-black), and larger navigation links (text-xl font-semibold) with consistent pt-28 spacing across all pages
 ✓ Enhanced global font consistency by applying NTR font stack universally across all components and pages
 ✓ Updated leaderboard to display user icons inline next to usernames instead of large circular containers
+✓ Enhanced prompts page with dropdown "Use Prompt" menu featuring Remix, Copy, Edit, Variable Settings, and direct links to ChatGPT, Claude, Perplexity, and Grok
+✓ Increased text scale globally on prompts page for better readability (headers to text-5xl/7xl, descriptions to text-base/2xl, larger search inputs and buttons)
+✓ Added subtle hero gradient adjustments (reduced saturation 75%-80%, darker lightness 20%-35%) and text drop shadows for improved readability against animated background
 
 # User Preferences
 
