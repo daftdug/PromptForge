@@ -58,7 +58,7 @@ export default function HeroSection() {
           
           {/* Right Content - Demo Video */}
           <div className="relative">
-            <div className="relative w-full h-96 lg:h-[500px] rounded-3xl overflow-hidden border border-prompt-purple/20 bg-card-gradient" data-testid="hero-demo-video">
+            <div className="relative w-full h-64 lg:h-80 rounded-3xl overflow-hidden border border-prompt-purple/20 bg-card-gradient" data-testid="hero-demo-video">
               <video
                 ref={videoRef}
                 autoPlay
