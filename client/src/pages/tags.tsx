@@ -61,7 +61,7 @@ export default function Tags() {
     <div className="min-h-screen bg-prompt-dark text-white font-sans overflow-x-hidden" data-testid="tags-page">
       <Navigation />
       
-      <div className="pt-20 pb-16">
+      <div className="pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-12">
