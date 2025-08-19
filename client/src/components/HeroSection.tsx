@@ -17,7 +17,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-hero-gradient overflow-hidden" data-testid="hero-section">
+    <section className="relative min-h-[70vh] flex items-center justify-center bg-hero-gradient overflow-hidden" data-testid="hero-section">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-prompt-purple/20 rounded-full blur-3xl"></div>
@@ -81,36 +81,8 @@ export default function HeroSection() {
                 Your browser does not support the video tag.
               </video>
               
-              {/* Fallback content when video doesn't load */}
-              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-prompt-purple/10 to-prompt-accent/10">
-                <div className="text-center">
-                  <div className="w-20 h-20 bg-prompt-purple/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Play className="h-10 w-10 text-prompt-purple" />
-                  </div>
-                  <h3 className="text-2xl font-bold mb-2 text-white">Prompt Magic Demo</h3>
-                  <p className="text-gray-300">See how easy it is to discover, copy, and use AI prompts</p>
-                </div>
-              </div>
-              
               {/* Dynamic overlay for visual interest */}
               <div className="absolute inset-0 bg-gradient-to-br from-prompt-purple/35 via-prompt-cyan/25 to-prompt-pink/40 pointer-events-none"></div>
-              
-              {/* Demo content overlay */}
-              <div className="absolute top-6 left-6">
-                <div className="text-center">
-                  <p className="text-white font-semibold text-sm mb-3 drop-shadow-lg">
-                    See Prompt Magic in Action
-                  </p>
-                  <Button
-                    onClick={handleStartFree}
-                    className="bg-cta-gradient hover:shadow-lg hover:shadow-prompt-purple/30 text-white px-5 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300 transform hover:scale-105"
-                    data-testid="demo-overlay-button"
-                  >
-                    <Play className="mr-2 h-4 w-4" />
-                    Try Demo Now
-                  </Button>
-                </div>
-              </div>
             </div>
           </div>
         </div>
