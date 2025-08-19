@@ -94,7 +94,7 @@ export default function Pricing() {
     <div className="min-h-screen bg-prompt-dark text-white font-sans overflow-x-hidden" data-testid="pricing-page">
       <Navigation />
       
-      <div className="pt-24 pb-16">
+      <div className="pt-28 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-16">
